@@ -1,6 +1,11 @@
-## Submission
+## Resubmission
 
-This is a new submission.
+This is a resubmission. In this version I have:
+
+* Written the DOI in the Description field as <doi:10.1109/TVCG.2009.113>,
+  as requested by the incoming pre-tests.
+* Used the English name of the museum (Sao Paulo Museum of Art) in the
+  Description field.
 
 ## Test environments
 
@@ -15,7 +20,9 @@ This is a new submission.
 
 * This is a new release.
 
-## Notes for reviewers
-
-* Proper nouns in DESCRIPTION (Candido Portinari, Museu de Arte de Sao Paulo,
-  Guerra, Paz, Machado, Oliveira, Fernandes) are spelled correctly.
+* Possibly misspelled words in DESCRIPTION: these are spelled correctly.
+  Candido Portinari is the painter; Sao Paulo and MASP name the museum that
+  holds the works; Guerra and Paz are the titles of his United Nations panels;
+  Machado, Oliveira and Fernandes are the authors of the cited method; and
+  protanopia, deuteranopia and tritanopia are the three types of
+  color-vision deficiency the package simulates.

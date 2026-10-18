@@ -6,12 +6,12 @@ Authors@R:
     person("Rafa", "Lopes", email = "lopes1313@gmail.com",
            role = c("aut", "cre"))
 Description: Color palettes inspired by paintings of Candido Portinari held by
-    the Museu de Arte de Sao Paulo (MASP) and by his Guerra (War) and Paz
-    (Peace) panels at the United Nations Headquarters. Provides qualitative,
-    diverging and sequential palettes for discrete and continuous data,
-    ready-made 'ggplot2' color and fill scales, and a colorblind-safety check
-    that simulates protanopia, deuteranopia and tritanopia following Machado,
-    Oliveira and Fernandes (2009) <https://doi.org/10.1109/tvcg.2009.113>.
+    the Sao Paulo Museum of Art (MASP) and by his Guerra (War) and Paz (Peace)
+    panels at the United Nations Headquarters. Provides qualitative, diverging
+    and sequential palettes for discrete and continuous data, ready-made
+    'ggplot2' color and fill scales, and a colorblind-safety check that
+    simulates protanopia, deuteranopia and tritanopia following Machado,
+    Oliveira and Fernandes (2009) <doi:10.1109/TVCG.2009.113>.
 License: MIT + file LICENSE
 Encoding: UTF-8
 Language: en-US
