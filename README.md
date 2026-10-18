@@ -1,4 +1,4 @@
-# PortinariColors <img src="man/figures/logo.png" align="right" height="139" width="120" alt="PortinariColors logo" />
+# PortinariColors <img src="man/figures/logo.png" align="right" width="250" alt="PortinariColors logo" />
 
 <!-- badges: start -->
 [![R-CMD-check](https://github.com/rafalopespx/PortinariColors/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/rafalopespx/PortinariColors/actions/workflows/R-CMD-check.yaml)
@@ -84,10 +84,9 @@ for images and links to every work, and
 for when to use each style.
 
 Palettes are merged when they are too similar. Candidate palettes were
-compared by mean CIELAB distance. Pairs under dE 12 were merged, and the
-comparison was repeated after each merge. Two groups were merged this way:
-the migrant-series works with the Felippe d'Oliveira bust and the Queiroz Lima
-portrait, and the Coffee Agricultural Worker with Saint Francis. `guerra` and
+compared by mean CIELAB distance. Two groups were merged this way:
+the migrant-series works with the 'Felippe d'Oliveira bust' and the 'Queiroz Lima'
+portrait, and the 'Coffee Agricultural Worker' with 'Saint Francis'. `guerra` and
 `paz` are distinct from every other palette (closest: `paz` vs `cafe`, dE 18.9),
 so they stay separate. `guerra_azul` and `paz_ouro` are sequential subsets of
 the two panels and are kept on purpose: they serve a different kind of data
@@ -115,16 +114,7 @@ colorblind analysis.
 
 A palette is colorblind-safe for its first `n` colors when those colors stay
 at least CIE76 dE 10 apart under protanopia, deuteranopia and tritanopia
-simulation (Machado et al., 2009). The simulation is in `portinari.cvd.check()`.
-
-## Building the documentation
-
-The `man/` directory is generated from the roxygen comments:
-
-```r
-install.packages("roxygen2")
-roxygen2::roxygenise()
-```
+simulation [Machado et al., 2009](https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=5290741). The simulation is in `portinari.cvd.check()`.
 
 ## Contributing
 
@@ -138,4 +128,4 @@ Works by Candido Portinari (1903-1962). Images and metadata are from the
 Museu de Arte de Sao Paulo (MASP) collection. The palettes are an inspired
 interpretation, not an official MASP product.
 
-The package API follows the conventions of `MoMAColors` and `MetBrewer`.
+The package API follows the conventions of [`MoMAColors`](https://github.com/BlakeRMills/MoMAColors) and [`MetBrewer`](https://github.com/BlakeRMills/MetBrewer).

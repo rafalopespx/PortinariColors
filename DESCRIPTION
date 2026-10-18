@@ -11,7 +11,7 @@ Description: Color palettes inspired by paintings of Candido Portinari held by
     diverging and sequential palettes for discrete and continuous data,
     ready-made 'ggplot2' color and fill scales, and a colorblind-safety check
     that simulates protanopia, deuteranopia and tritanopia following Machado,
-    Oliveira and Fernandes (2009) <doi:10.1109/TVCG.2009.113>.
+    Oliveira and Fernandes (2009) <https://doi.org/10.1109/tvcg.2009.113>.
 License: MIT + file LICENSE
 Encoding: UTF-8
 Language: en-US
