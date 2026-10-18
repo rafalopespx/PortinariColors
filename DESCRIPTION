@@ -4,7 +4,7 @@ Title: Color Palettes Inspired by the Paintings of Candido Portinari
 Version: 0.3.0
 Authors@R:
     person("Rafa", "Lopes", email = "lopes1313@gmail.com",
-           role = c("aut", "cre", "cph"))
+           role = c("aut", "cre"))
 Description: Color palettes inspired by paintings of Candido Portinari held by
     the Museu de Arte de Sao Paulo (MASP) and by his Guerra (War) and Paz
     (Peace) panels at the United Nations Headquarters. Provides qualitative,
