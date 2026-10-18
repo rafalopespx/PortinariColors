@@ -1,0 +1,34 @@
+url: https://rafalopespx.github.io/PortinariColors/
+
+template:
+  bootstrap: 5
+
+navbar:
+  structure:
+    left: [intro, reference, articles, news]
+    right: [search, github]
+
+articles:
+  - title: Palettes
+    navbar: ~
+    contents:
+      - articles/paintings
+      - articles/palette-styles
+
+reference:
+  - title: Palettes
+    desc: Get colors from a palette.
+    contents:
+      - portinari.pal
+      - portinari.palettes
+      - show_portinari
+  - title: ggplot2 scales
+    contents:
+      - portinari_scales
+  - title: Paintings and accessibility
+    contents:
+      - portinari.works
+      - portinari.cvd.check
+  - title: Package
+    contents:
+      - PortinariColors-package

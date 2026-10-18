@@ -1,0 +1,10 @@
+pandoc: 3.12.1
+pkgdown: 2.2.1
+pkgdown_sha: ~
+articles:
+  articles/paintings: paintings.html
+  articles/palette-styles: palette-styles.html
+last_built: 2026-10-18T04:16Z
+urls:
+  reference: https://rafalopespx.github.io/PortinariColors/reference
+  article: https://rafalopespx.github.io/PortinariColors/articles

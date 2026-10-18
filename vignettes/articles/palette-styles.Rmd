@@ -1,0 +1,91 @@
+---
+title: "Choosing a palette style"
+description: "Qualitative, diverging and sequential palettes, and when to use each."
+---
+
+```{r setup, include = FALSE}
+knitr::opts_chunk$set(fig.width = 7, fig.height = 3.2, dpi = 120, message = FALSE)
+library(PortinariColors)
+library(ggplot2)
+theme_set(theme_minimal(base_size = 12))
+```
+
+Like RColorBrewer and MetBrewer, PortinariColors groups its palettes by the
+kind of data they suit.
+
+```{r}
+portinari.palettes()[, c("palette", "category", "n_colors", "cvd_n")]
+```
+
+## Qualitative: unordered groups
+
+Distinct hues with no implied order. Asking for `n` colors returns the `n`
+most distinct ones.
+
+```{r, fig.height = 1.6}
+show_portinari(category = "qualitative")
+```
+
+```{r}
+ggplot(mpg, aes(displ, hwy, colour = drv)) +
+  geom_point(size = 2.5, alpha = 0.8) +
+  scale_color_portinari("cafe", name = "Drive")
+```
+
+## Sequential: ordered values
+
+Colors run from dark to light. Discrete subsets keep both ends and space the
+rest evenly.
+
+```{r, fig.height = 1.6}
+show_portinari(category = "sequential")
+```
+
+```{r}
+ggplot(faithfuld, aes(waiting, eruptions, fill = density)) +
+  geom_raster() +
+  scale_fill_portinari("guerra_azul", type = "continuous", direction = -1) +
+  coord_cartesian(expand = FALSE)
+```
+
+## Diverging: values around a midpoint
+
+Two dark arms meet in a light center, so the middle of the scale reads as
+neutral. Discrete subsets take both ends, then the center, then fill each arm
+evenly.
+
+```{r, fig.height = 3.2}
+show_portinari(category = "diverging")
+```
+
+```{r}
+cars <- transform(mtcars, car = rownames(mtcars), diff = mpg - mean(mpg))
+ggplot(cars, aes(diff, reorder(car, diff), fill = diff)) +
+  geom_col() +
+  scale_fill_portinari("guerra", type = "continuous", limits = c(-15, 15)) +
+  labs(x = "mpg relative to the mean", y = NULL)
+```
+
+```{r}
+likert <- data.frame(
+  question = rep(paste("Question", 1:4), each = 5),
+  answer = factor(rep(c("Strongly disagree", "Disagree", "Neutral", "Agree", "Strongly agree"), 4),
+                  levels = c("Strongly disagree", "Disagree", "Neutral", "Agree", "Strongly agree")),
+  share = c(10, 20, 30, 25, 15, 5, 15, 20, 35, 25, 20, 25, 25, 20, 10, 8, 12, 30, 30, 20)
+)
+ggplot(likert, aes(share, question, fill = answer)) +
+  geom_col() +
+  scale_fill_portinari("retirantes", name = NULL) +
+  labs(x = "%", y = NULL) +
+  theme(legend.position = "bottom")
+```
+
+## Colorblind safety
+
+`colorblind = TRUE` restricts any palette to colors that stay distinct under
+protanopia, deuteranopia and tritanopia simulation.
+
+```{r}
+portinari.pal("sofia", colorblind = TRUE)
+portinari.cvd.check("sofia")
+```

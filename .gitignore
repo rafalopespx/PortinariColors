@@ -1,0 +1,5 @@
+.Rhistory
+.RData
+.Rproj.user/
+*.tar.gz
+*.Rcheck/
