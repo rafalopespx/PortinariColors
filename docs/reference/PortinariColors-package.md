@@ -17,4 +17,4 @@ Useful links:
 
 ## Author
 
-**Maintainer**: Rafa Lopes <lopes1313 at gmail.com> \[copyright holder\]
+**Maintainer**: Rafa Lopes <lopes1313 at gmail.com>
