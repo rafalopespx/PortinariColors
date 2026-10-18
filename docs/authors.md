@@ -2,7 +2,7 @@
 
 ## Authors
 
-- **Rafa Lopes**. Author, maintainer.
+- **Rafa Lopes**. Author, maintainer, copyright holder.
 
 ## Citation
 

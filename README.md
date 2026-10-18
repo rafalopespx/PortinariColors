@@ -1,15 +1,15 @@
-# PortinariColors <img src="man/figures/logo.png" align="right" width="250" alt="PortinariColors logo" />
+# PortinariColors <img src="man/figures/logo.png" align="right" width="400" alt="PortinariColors logo" />
 
 <!-- badges: start -->
 [![R-CMD-check](https://github.com/rafalopespx/PortinariColors/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/rafalopespx/PortinariColors/actions/workflows/R-CMD-check.yaml)
 <!-- badges: end -->
 
-Color palettes inspired by paintings of Candido Portinari in the Museu de Arte
+Color palettes inspired by paintings of [Candido Portinari](https://en.wikipedia.org/wiki/Candido_Portinari) in the Museu de Arte
 de Sao Paulo (MASP) collection and by his *Guerra* and *Paz* panels at the
 United Nations Headquarters in New York. Fast to use, easy to plot with, and built for
-`ggplot2`.
+[`ggplot2`](https://ggplot2.tidyverse.org/).
 
-![Palette overview](man/figures/palettes.png)
+<!-- ![Palette overview](man/figures/palettes.png) -->
 
 ## Installation
 

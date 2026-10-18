@@ -2,6 +2,11 @@
 
 ## PortinariColors 0.3.0
 
+- Initial CRAN submission.
+
+- Discrete scales now work with ggplot2 \< 3.5.0, which requires
+  `scale_name`.
+
 - Palettes now have a style, as in RColorBrewer and MetBrewer:
   qualitative (`cafe`, `paz`), diverging (`retirantes`, `inah`, `sofia`,
   `guerra`) and sequential (`guerra_azul`, `paz_ouro`).
@@ -9,18 +14,24 @@
   and
   [`show_portinari()`](https://rafalopespx.github.io/PortinariColors/reference/show_portinari.md)
   gain a `category` filter.
+
 - New sequential palettes `guerra_azul` and `paz_ouro`, derived from the
   UN panels.
+
 - Palettes are stored MetBrewer-style: colors in display order plus an
   `order` ranking for discrete picks. Discrete subsets now suit the
   style: sequential and diverging palettes keep both ends (and the light
-  centre), qualitative palettes keep the most distinct colors. The
+  center), qualitative palettes keep the most distinct colors. The
   colors returned for a given `n` have changed for every palette.
+
 - `sofia` is now colorblind-safe for its first 3 colors (was 2).
+
 - New
   [`portinari.works()`](https://rafalopespx.github.io/PortinariColors/reference/portinari.works.md)
   lists the paintings behind each palette with links.
+
 - Hex logo: a portrait of Portinari in the light shades of `guerra`.
+
 - pkgdown site with two articles: “The paintings” (images and links for
   every reference work) and “Choosing a palette style”.
 

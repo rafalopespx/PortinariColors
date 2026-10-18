@@ -1,13 +1,10 @@
 # PortinariColors
 
-Color palettes inspired by paintings of Candido Portinari in the Museu
+Color palettes inspired by paintings of [Candido
+Portinari](https://en.wikipedia.org/wiki/Candido_Portinari) in the Museu
 de Arte de Sao Paulo (MASP) collection and by his *Guerra* and *Paz*
 panels at the United Nations Headquarters in New York. Fast to use, easy
-to plot with, and built for `ggplot2`.
-
-![Palette overview](reference/figures/palettes.png)
-
-Palette overview
+to plot with, and built for [`ggplot2`](https://ggplot2.tidyverse.org/).
 
 ## Installation
 
@@ -22,7 +19,7 @@ Palette overview
 [`library`](https://rdrr.io/r/base/library.html)`(`[`ggplot2`](https://ggplot2.tidyverse.org)`)`\
 \
 [`portinari.pal`](https://rafalopespx.github.io/PortinariColors/reference/portinari.pal.md)`(``"cafe"``)``                         ``# full palette as hex codes`\
-[`portinari.pal`](https://rafalopespx.github.io/PortinariColors/reference/portinari.pal.md)`(``"retirantes"``, n ``=`` ``3``)``            ``# 3 colors: both ends and the centre`\
+[`portinari.pal`](https://rafalopespx.github.io/PortinariColors/reference/portinari.pal.md)`(``"retirantes"``, n ``=`` ``3``)``            ``# 3 colors: both ends and the center`\
 [`portinari.pal`](https://rafalopespx.github.io/PortinariColors/reference/portinari.pal.md)`(``"guerra_azul"``, n ``=`` ``20``, type ``=`` ``"continuous"``)``  ``# interpolated`\
 \
 `# Qualitative: unordered groups`\
@@ -42,7 +39,7 @@ Palette overview
 
 Discrete palettes pick colors to suit the palette style: the most
 distinct colors for qualitative palettes, evenly spaced steps for
-sequential palettes, and balanced steps either side of the light centre
+sequential palettes, and balanced steps either side of the light center
 for diverging palettes. Continuous palettes interpolate the full palette
 in CIELAB.
 
@@ -83,11 +80,10 @@ style](https://rafalopespx.github.io/PortinariColors/articles/palette-styles.htm
 for when to use each style.
 
 Palettes are merged when they are too similar. Candidate palettes were
-compared by mean CIELAB distance. Pairs under dE 12 were merged, and the
-comparison was repeated after each merge. Two groups were merged this
-way: the migrant-series works with the Felippe d’Oliveira bust and the
-Queiroz Lima portrait, and the Coffee Agricultural Worker with Saint
-Francis. `guerra` and `paz` are distinct from every other palette
+compared by mean CIELAB distance. Two groups were merged this way: the
+migrant-series works with the ‘Felippe d’Oliveira bust’ and the ‘Queiroz
+Lima’ portrait, and the ‘Coffee Agricultural Worker’ with ‘Saint
+Francis’. `guerra` and `paz` are distinct from every other palette
 (closest: `paz` vs `cafe`, dE 18.9), so they stay separate.
 `guerra_azul` and `paz_ouro` are sequential subsets of the two panels
 and are kept on purpose: they serve a different kind of data rather than
@@ -116,16 +112,10 @@ merge and colorblind analysis.
 
 A palette is colorblind-safe for its first `n` colors when those colors
 stay at least CIE76 dE 10 apart under protanopia, deuteranopia and
-tritanopia simulation (Machado et al., 2009). The simulation is in
+tritanopia simulation [Machado et al.,
+2009](https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=5290741).
+The simulation is in
 [`portinari.cvd.check()`](https://rafalopespx.github.io/PortinariColors/reference/portinari.cvd.check.md).
-
-## Building the documentation
-
-The `man/` directory is generated from the roxygen comments:
-
-\
-[`install.packages`](https://rdrr.io/r/utils/install.packages.html)`(``"roxygen2"``)`\
-`roxygen2``::`[`roxygenise`](https://roxygen2.r-lib.org/reference/roxygenize.html)`(``)`
 
 ## Contributing
 
@@ -141,7 +131,9 @@ Works by Candido Portinari (1903-1962). Images and metadata are from the
 Museu de Arte de Sao Paulo (MASP) collection. The palettes are an
 inspired interpretation, not an official MASP product.
 
-The package API follows the conventions of `MoMAColors` and `MetBrewer`.
+The package API follows the conventions of
+[`MoMAColors`](https://github.com/BlakeRMills/MoMAColors) and
+[`MetBrewer`](https://github.com/BlakeRMills/MetBrewer).
 
 # Package index
 

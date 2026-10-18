@@ -1,7 +1,7 @@
 # Show Portinari palettes
 
 Draws each palette as a row of color swatches using base graphics,
-labelled with its category.
+labeled with its category.
 
 ## Usage
 

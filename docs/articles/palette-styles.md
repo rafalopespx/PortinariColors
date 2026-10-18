@@ -53,8 +53,8 @@ the rest evenly.
 
 ## Diverging: values around a midpoint
 
-Two dark arms meet in a light centre, so the middle of the scale reads
-as neutral. Discrete subsets take both ends, then the centre, then fill
+Two dark arms meet in a light center, so the middle of the scale reads
+as neutral. Discrete subsets take both ends, then the center, then fill
 each arm evenly.
 
 \

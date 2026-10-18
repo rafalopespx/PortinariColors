@@ -55,7 +55,7 @@ Palettes come in three categories (see
 ordered values, and *diverging* palettes for values around a meaningful
 midpoint. Discrete palettes pick `n` colors that suit the category: the
 most distinct colors for qualitative palettes, evenly spaced steps for
-sequential palettes, and balanced steps either side of the light centre
+sequential palettes, and balanced steps either side of the light center
 for diverging palettes. Continuous palettes interpolate the full palette
 in CIELAB space.
 
