@@ -11,12 +11,14 @@ Get colors from a palette.
 - [`show_portinari()`](https://rafalopespx.github.io/PortinariColors/reference/show_portinari.md)
   : Show Portinari palettes
 
-## ggplot2 scales
+## ggplot2 scales and theme
 
 - [`scale_color_portinari()`](https://rafalopespx.github.io/PortinariColors/reference/portinari_scales.md)
   [`scale_colour_portinari()`](https://rafalopespx.github.io/PortinariColors/reference/portinari_scales.md)
   [`scale_fill_portinari()`](https://rafalopespx.github.io/PortinariColors/reference/portinari_scales.md)
   : Portinari color and fill scales for ggplot2
+- [`theme_portinari()`](https://rafalopespx.github.io/PortinariColors/reference/theme_portinari.md)
+  : A ggplot2 theme in the spirit of Candido Portinari
 
 ## Paintings and accessibility
 

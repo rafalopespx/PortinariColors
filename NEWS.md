@@ -1,9 +1,22 @@
 # PortinariColors (development version)
 
-* New diverging palette `terra_roxa`: plum and mauve from *Coffee Agricultural
-  Worker* and *Mr. Queiroz Lima* against the pale greens of the coffee rows,
-  through a sage off-white center. Its colors were sampled from the MASP
-  images, and all nine are colorblind-safe.
+* New `theme_portinari()`, a complete `ggplot2` theme in the spirit of
+  Portinari's canvases, with three moods: `"canvas"` (raw linen, umber ink,
+  sienna contours), `"guerra"` (indigo ground, pale citrine ink) and `"paz"`
+  (golden cream ground, brown ink). Options for grid lines and a painted
+  frame; all text meets WCAG AA contrast.
+
+* New diverging palette `terra_roxa`: the plum and mauve tones of the worker's
+  shirt in *Coffee Agricultural Worker* against the pale greens of the coffee
+  rows, through a sage off-white center. Its colors were sampled from the MASP
+  image, and all nine are colorblind-safe.
+* New sequential palette `roxa_terra`, the companion to `terra_roxa`: from the
+  near-black soil at the bottom of *Coffee Agricultural Worker*, through the
+  plums of `terra_roxa`, to the pale citrine of *Guerra*. All eight colors are
+  colorblind-safe.
+* `retirantes` no longer draws on *Mr. Queiroz Lima*. Its light center changes
+  from `#EFE9E0` to `#D9CBB2`, from *Northeastern Migrants*; the other seven
+  colors, their order and colorblind safety are unchanged.
 
 # PortinariColors 0.3.0
 

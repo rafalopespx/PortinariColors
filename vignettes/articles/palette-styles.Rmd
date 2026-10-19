@@ -48,6 +48,26 @@ ggplot(faithfuld, aes(waiting, eruptions, fill = density)) +
   coord_cartesian(expand = FALSE)
 ```
 
+`roxa_terra` runs from the soil black of *Coffee Agricultural Worker* through
+its plums to the pale citrine of *Guerra*, the lightest color of
+`guerra_azul`, so even its lightest values stay visible on a white page. Here it
+maps the elevation of Maungawhau volcano.
+
+```{r, fig.height = 4}
+volcano_long <- data.frame(
+  x = rep(seq_len(nrow(volcano)), ncol(volcano)),
+  y = rep(seq_len(ncol(volcano)), each = nrow(volcano)),
+  height = as.vector(volcano)
+)
+ggplot(volcano_long, aes(x, y, fill = height)) +
+  geom_raster() +
+  scale_fill_portinari("roxa_terra", type = "continuous", direction = -1,
+                       name = "Height (m)") +
+  coord_equal(expand = FALSE) +
+  labs(x = NULL, y = NULL) +
+  theme(axis.text = element_blank())
+```
+
 ## Diverging: values around a midpoint
 
 Two dark arms meet in a light center, so the middle of the scale reads as
@@ -58,8 +78,8 @@ evenly.
 show_portinari(category = "diverging")
 ```
 
-`terra_roxa` sets the plum of a Portinari suit against the green of a coffee
-plantation, a classic purple-green diverging scheme. It is colorblind-safe
+`terra_roxa` sets the plum of a coffee worker's shirt against the green of the
+plantation behind him, a classic purple-green diverging scheme. It is colorblind-safe
 for all nine colors, which makes it a good default for correlation matrices.
 
 ```{r, fig.height = 5, fig.width = 6}
@@ -101,6 +121,45 @@ ggplot(likert, aes(share, question, fill = answer)) +
   labs(x = "%", y = NULL) +
   theme(legend.position = "bottom")
 ```
+
+## A Portinari canvas for your plots
+
+`theme_portinari()` completes the look: a raw-linen ground, firm drawn axis
+lines, earth-colored lettering and a painted frame. The `guerra` and `paz`
+moods follow the two United Nations panels.
+
+```{r, fig.height = 3.4}
+ggplot(mtcars, aes(wt, mpg, colour = factor(cyl))) +
+  geom_point(size = 3) +
+  scale_color_portinari("paz", name = "Cylinders") +
+  labs(title = "Fuel economy", subtitle = "Heavier cars travel less per gallon",
+       x = "Weight (1000 lb)", y = "Miles per gallon") +
+  theme_portinari()
+```
+
+```{r, fig.height = 3.4}
+ggplot(faithfuld, aes(waiting, eruptions, fill = density)) +
+  geom_raster() +
+  scale_fill_portinari("guerra", type = "continuous") +
+  coord_cartesian(expand = FALSE) +
+  labs(title = "Old Faithful", subtitle = "The ground of War",
+       x = "Waiting (min)", y = "Eruption (min)") +
+  theme_portinari("guerra", grid = "none")
+```
+
+```{r, fig.height = 3.4}
+ggplot(mpg, aes(class, fill = drv)) +
+  geom_bar(width = 0.75) +
+  scale_fill_portinari("paz", name = "Drive") +
+  labs(title = "Cars by class", subtitle = "The golden light of Peace",
+       x = NULL, y = "Cars") +
+  theme_portinari("paz")
+```
+
+On a light mood, a palette's lightest color sits close to the ground: that
+suits filled areas, where it reads as neutral, but not points or lines. On the
+`guerra` mood, prefer palettes other than `guerra` and `guerra_azul`, whose
+darkest color is the ground itself.
 
 ## Colorblind safety
 

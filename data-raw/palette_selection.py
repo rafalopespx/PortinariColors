@@ -41,7 +41,6 @@ WORKS = {
     "saint-francis":              ["#6B4A2E", "#E9DCC4", "#3D5A80", "#D9A441", "#B33A2A", "#22201D"],
     "inah-prudente-de-moraes":    ["#E8B9A0", "#A9B8A4", "#2D3E56", "#C98F3D", "#F1E6D6"],
     "sofia-cantalupo":            ["#D96B7A", "#2E8B8B", "#E0B04A", "#F2E8DC", "#2F5E46"],
-    "mr-queiroz-lima":            ["#1C1C22", "#4A5C75", "#D4A574", "#8E8F93", "#EFE9E0"],
     "felippe-daudt-doliveira":    ["#8A5B2F", "#7F8F80", "#1E1A17", "#D8C9AE", "#3F5670"],
     # UN Headquarters panels (1952-1956). Guerra: "a symphony in blue" of deep
     # violet-dark tones over light blues tending to pale citrine, with an

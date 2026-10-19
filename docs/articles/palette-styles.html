@@ -77,16 +77,17 @@
 by the kind of data they suit.</p>
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="../reference/portinari.palettes.html">portinari.palettes</a></span><span class="op">(</span><span class="op">)</span><span class="op">[</span>, <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"palette"</span>, <span class="st">"category"</span>, <span class="st">"n_colors"</span>, <span class="st">"cvd_n"</span><span class="op">)</span><span class="op">]</span></span></code></pre></div>
-<pre><code><span><span class="co">##       palette    category n_colors cvd_n</span></span>
-<span><span class="co">## 1        cafe qualitative        6     6</span></span>
-<span><span class="co">## 2         paz qualitative        8     4</span></span>
-<span><span class="co">## 3  retirantes   diverging        8     8</span></span>
-<span><span class="co">## 4        inah   diverging        5     4</span></span>
-<span><span class="co">## 5       sofia   diverging        5     3</span></span>
-<span><span class="co">## 6  terra_roxa   diverging        9     9</span></span>
-<span><span class="co">## 7      guerra   diverging        9     9</span></span>
-<span><span class="co">## 8 guerra_azul  sequential        6     6</span></span>
-<span><span class="co">## 9    paz_ouro  sequential        4     4</span></span></code></pre>
+<pre><code><span><span class="co">##        palette    category n_colors cvd_n</span></span>
+<span><span class="co">## 1         cafe qualitative        6     6</span></span>
+<span><span class="co">## 2          paz qualitative        8     4</span></span>
+<span><span class="co">## 3   retirantes   diverging        8     8</span></span>
+<span><span class="co">## 4         inah   diverging        5     4</span></span>
+<span><span class="co">## 5        sofia   diverging        5     3</span></span>
+<span><span class="co">## 6   terra_roxa   diverging        9     9</span></span>
+<span><span class="co">## 7       guerra   diverging        9     9</span></span>
+<span><span class="co">## 8  guerra_azul  sequential        6     6</span></span>
+<span><span class="co">## 9   roxa_terra  sequential        8     8</span></span>
+<span><span class="co">## 10    paz_ouro  sequential        4     4</span></span></code></pre>
 <div class="section level2">
 <h2 id="qualitative-unordered-groups">Qualitative: unordered groups<a class="anchor" aria-label="anchor" href="#qualitative-unordered-groups"></a>
 </h2>
@@ -115,6 +116,25 @@ space the rest evenly.</p>
 <span>  <span class="fu"><a href="../reference/portinari_scales.html">scale_fill_portinari</a></span><span class="op">(</span><span class="st">"guerra_azul"</span>, type <span class="op">=</span> <span class="st">"continuous"</span>, direction <span class="op">=</span> <span class="op">-</span><span class="fl">1</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/coord_cartesian.html" class="external-link">coord_cartesian</a></span><span class="op">(</span>expand <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></span></code></pre></div>
 <p><img src="palette-styles_files/figure-html/unnamed-chunk-5-1.png" class="r-plt" alt="" width="840"></p>
+<p><code>roxa_terra</code> runs from the soil black of <em>Coffee
+Agricultural Worker</em> through its plums to the pale citrine of
+<em>Guerra</em>, the lightest color of <code>guerra_azul</code>, so even
+its lightest values stay visible on a white page. Here it maps the
+elevation of Maungawhau volcano.</p>
+<div class="sourceCode" id="cb7"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">volcano_long</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/data.frame.html" class="external-link">data.frame</a></span><span class="op">(</span></span>
+<span>  x <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/rep.html" class="external-link">rep</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/seq.html" class="external-link">seq_len</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/nrow.html" class="external-link">nrow</a></span><span class="op">(</span><span class="va">volcano</span><span class="op">)</span><span class="op">)</span>, <span class="fu"><a href="https://rdrr.io/r/base/nrow.html" class="external-link">ncol</a></span><span class="op">(</span><span class="va">volcano</span><span class="op">)</span><span class="op">)</span>,</span>
+<span>  y <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/rep.html" class="external-link">rep</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/seq.html" class="external-link">seq_len</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/nrow.html" class="external-link">ncol</a></span><span class="op">(</span><span class="va">volcano</span><span class="op">)</span><span class="op">)</span>, each <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/nrow.html" class="external-link">nrow</a></span><span class="op">(</span><span class="va">volcano</span><span class="op">)</span><span class="op">)</span>,</span>
+<span>  height <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/vector.html" class="external-link">as.vector</a></span><span class="op">(</span><span class="va">volcano</span><span class="op">)</span></span>
+<span><span class="op">)</span></span>
+<span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html" class="external-link">ggplot</a></span><span class="op">(</span><span class="va">volcano_long</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html" class="external-link">aes</a></span><span class="op">(</span><span class="va">x</span>, <span class="va">y</span>, fill <span class="op">=</span> <span class="va">height</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_tile.html" class="external-link">geom_raster</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="../reference/portinari_scales.html">scale_fill_portinari</a></span><span class="op">(</span><span class="st">"roxa_terra"</span>, type <span class="op">=</span> <span class="st">"continuous"</span>, direction <span class="op">=</span> <span class="op">-</span><span class="fl">1</span>,</span>
+<span>                       name <span class="op">=</span> <span class="st">"Height (m)"</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/coord_fixed.html" class="external-link">coord_equal</a></span><span class="op">(</span>expand <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html" class="external-link">labs</a></span><span class="op">(</span>x <span class="op">=</span> <span class="cn">NULL</span>, y <span class="op">=</span> <span class="cn">NULL</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/theme.html" class="external-link">theme</a></span><span class="op">(</span>axis.text <span class="op">=</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/element.html" class="external-link">element_blank</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
+<p><img src="palette-styles_files/figure-html/unnamed-chunk-6-1.png" class="r-plt" alt="" width="840"></p>
 </div>
 <div class="section level2">
 <h2 id="diverging-values-around-a-midpoint">Diverging: values around a midpoint<a class="anchor" aria-label="anchor" href="#diverging-values-around-a-midpoint"></a>
@@ -122,14 +142,14 @@ space the rest evenly.</p>
 <p>Two dark arms meet in a light center, so the middle of the scale
 reads as neutral. Discrete subsets take both ends, then the center, then
 fill each arm evenly.</p>
-<div class="sourceCode" id="cb7"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="fu"><a href="../reference/show_portinari.html">show_portinari</a></span><span class="op">(</span>category <span class="op">=</span> <span class="st">"diverging"</span><span class="op">)</span></span></code></pre></div>
-<p><img src="palette-styles_files/figure-html/unnamed-chunk-6-1.png" class="r-plt" alt="" width="840"></p>
-<p><code>terra_roxa</code> sets the plum of a Portinari suit against the
-green of a coffee plantation, a classic purple-green diverging scheme.
-It is colorblind-safe for all nine colors, which makes it a good default
-for correlation matrices.</p>
 <div class="sourceCode" id="cb8"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="../reference/show_portinari.html">show_portinari</a></span><span class="op">(</span>category <span class="op">=</span> <span class="st">"diverging"</span><span class="op">)</span></span></code></pre></div>
+<p><img src="palette-styles_files/figure-html/unnamed-chunk-7-1.png" class="r-plt" alt="" width="840"></p>
+<p><code>terra_roxa</code> sets the plum of a coffee worker’s shirt
+against the green of the plantation behind him, a classic purple-green
+diverging scheme. It is colorblind-safe for all nine colors, which makes
+it a good default for correlation matrices.</p>
+<div class="sourceCode" id="cb9"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">cors</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/cor.html" class="external-link">cor</a></span><span class="op">(</span><span class="va">mtcars</span><span class="op">)</span></span>
 <span><span class="va">cors_long</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/data.frame.html" class="external-link">data.frame</a></span><span class="op">(</span></span>
 <span>  x <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/factor.html" class="external-link">factor</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/rep.html" class="external-link">rep</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/colnames.html" class="external-link">colnames</a></span><span class="op">(</span><span class="va">cors</span><span class="op">)</span>, each <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/nrow.html" class="external-link">ncol</a></span><span class="op">(</span><span class="va">cors</span><span class="op">)</span><span class="op">)</span>, levels <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/colnames.html" class="external-link">colnames</a></span><span class="op">(</span><span class="va">cors</span><span class="op">)</span><span class="op">)</span>,</span>
@@ -145,15 +165,15 @@ for correlation matrices.</p>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/coord_fixed.html" class="external-link">coord_equal</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html" class="external-link">labs</a></span><span class="op">(</span>x <span class="op">=</span> <span class="cn">NULL</span>, y <span class="op">=</span> <span class="cn">NULL</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/theme.html" class="external-link">theme</a></span><span class="op">(</span>panel.grid <span class="op">=</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/element.html" class="external-link">element_blank</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
-<p><img src="palette-styles_files/figure-html/unnamed-chunk-7-1.png" class="r-plt" alt="" width="720"></p>
-<div class="sourceCode" id="cb9"><pre class="downlit sourceCode r">
+<p><img src="palette-styles_files/figure-html/unnamed-chunk-8-1.png" class="r-plt" alt="" width="720"></p>
+<div class="sourceCode" id="cb10"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">cars</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/transform.html" class="external-link">transform</a></span><span class="op">(</span><span class="va">mtcars</span>, car <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/colnames.html" class="external-link">rownames</a></span><span class="op">(</span><span class="va">mtcars</span><span class="op">)</span>, diff <span class="op">=</span> <span class="va">mpg</span> <span class="op">-</span> <span class="fu"><a href="https://rdrr.io/r/base/mean.html" class="external-link">mean</a></span><span class="op">(</span><span class="va">mpg</span><span class="op">)</span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html" class="external-link">ggplot</a></span><span class="op">(</span><span class="va">cars</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html" class="external-link">aes</a></span><span class="op">(</span><span class="va">diff</span>, <span class="fu"><a href="https://rdrr.io/r/stats/reorder.factor.html" class="external-link">reorder</a></span><span class="op">(</span><span class="va">car</span>, <span class="va">diff</span><span class="op">)</span>, fill <span class="op">=</span> <span class="va">diff</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_bar.html" class="external-link">geom_col</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu"><a href="../reference/portinari_scales.html">scale_fill_portinari</a></span><span class="op">(</span><span class="st">"guerra"</span>, type <span class="op">=</span> <span class="st">"continuous"</span>, limits <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="op">-</span><span class="fl">15</span>, <span class="fl">15</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html" class="external-link">labs</a></span><span class="op">(</span>x <span class="op">=</span> <span class="st">"mpg relative to the mean"</span>, y <span class="op">=</span> <span class="cn">NULL</span><span class="op">)</span></span></code></pre></div>
-<p><img src="palette-styles_files/figure-html/unnamed-chunk-8-1.png" class="r-plt" alt="" width="840"></p>
-<div class="sourceCode" id="cb10"><pre class="downlit sourceCode r">
+<p><img src="palette-styles_files/figure-html/unnamed-chunk-9-1.png" class="r-plt" alt="" width="840"></p>
+<div class="sourceCode" id="cb11"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">likert</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/data.frame.html" class="external-link">data.frame</a></span><span class="op">(</span></span>
 <span>  question <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/rep.html" class="external-link">rep</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/paste.html" class="external-link">paste</a></span><span class="op">(</span><span class="st">"Question"</span>, <span class="fl">1</span><span class="op">:</span><span class="fl">4</span><span class="op">)</span>, each <span class="op">=</span> <span class="fl">5</span><span class="op">)</span>,</span>
 <span>  answer <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/factor.html" class="external-link">factor</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/rep.html" class="external-link">rep</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"Strongly disagree"</span>, <span class="st">"Disagree"</span>, <span class="st">"Neutral"</span>, <span class="st">"Agree"</span>, <span class="st">"Strongly agree"</span><span class="op">)</span>, <span class="fl">4</span><span class="op">)</span>,</span>
@@ -165,7 +185,45 @@ for correlation matrices.</p>
 <span>  <span class="fu"><a href="../reference/portinari_scales.html">scale_fill_portinari</a></span><span class="op">(</span><span class="st">"retirantes"</span>, name <span class="op">=</span> <span class="cn">NULL</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html" class="external-link">labs</a></span><span class="op">(</span>x <span class="op">=</span> <span class="st">"%"</span>, y <span class="op">=</span> <span class="cn">NULL</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/theme.html" class="external-link">theme</a></span><span class="op">(</span>legend.position <span class="op">=</span> <span class="st">"bottom"</span><span class="op">)</span></span></code></pre></div>
-<p><img src="palette-styles_files/figure-html/unnamed-chunk-9-1.png" class="r-plt" alt="" width="840"></p>
+<p><img src="palette-styles_files/figure-html/unnamed-chunk-10-1.png" class="r-plt" alt="" width="840"></p>
+</div>
+<div class="section level2">
+<h2 id="a-portinari-canvas-for-your-plots">A Portinari canvas for your plots<a class="anchor" aria-label="anchor" href="#a-portinari-canvas-for-your-plots"></a>
+</h2>
+<p><code><a href="../reference/theme_portinari.html">theme_portinari()</a></code> completes the look: a raw-linen
+ground, firm drawn axis lines, earth-colored lettering and a painted
+frame. The <code>guerra</code> and <code>paz</code> moods follow the two
+United Nations panels.</p>
+<div class="sourceCode" id="cb12"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html" class="external-link">ggplot</a></span><span class="op">(</span><span class="va">mtcars</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html" class="external-link">aes</a></span><span class="op">(</span><span class="va">wt</span>, <span class="va">mpg</span>, colour <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/factor.html" class="external-link">factor</a></span><span class="op">(</span><span class="va">cyl</span><span class="op">)</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_point.html" class="external-link">geom_point</a></span><span class="op">(</span>size <span class="op">=</span> <span class="fl">3</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="../reference/portinari_scales.html">scale_color_portinari</a></span><span class="op">(</span><span class="st">"paz"</span>, name <span class="op">=</span> <span class="st">"Cylinders"</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html" class="external-link">labs</a></span><span class="op">(</span>title <span class="op">=</span> <span class="st">"Fuel economy"</span>, subtitle <span class="op">=</span> <span class="st">"Heavier cars travel less per gallon"</span>,</span>
+<span>       x <span class="op">=</span> <span class="st">"Weight (1000 lb)"</span>, y <span class="op">=</span> <span class="st">"Miles per gallon"</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="../reference/theme_portinari.html">theme_portinari</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
+<p><img src="palette-styles_files/figure-html/unnamed-chunk-11-1.png" class="r-plt" alt="" width="840"></p>
+<div class="sourceCode" id="cb13"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html" class="external-link">ggplot</a></span><span class="op">(</span><span class="va">faithfuld</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html" class="external-link">aes</a></span><span class="op">(</span><span class="va">waiting</span>, <span class="va">eruptions</span>, fill <span class="op">=</span> <span class="va">density</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_tile.html" class="external-link">geom_raster</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="../reference/portinari_scales.html">scale_fill_portinari</a></span><span class="op">(</span><span class="st">"guerra"</span>, type <span class="op">=</span> <span class="st">"continuous"</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/coord_cartesian.html" class="external-link">coord_cartesian</a></span><span class="op">(</span>expand <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html" class="external-link">labs</a></span><span class="op">(</span>title <span class="op">=</span> <span class="st">"Old Faithful"</span>, subtitle <span class="op">=</span> <span class="st">"The ground of War"</span>,</span>
+<span>       x <span class="op">=</span> <span class="st">"Waiting (min)"</span>, y <span class="op">=</span> <span class="st">"Eruption (min)"</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="../reference/theme_portinari.html">theme_portinari</a></span><span class="op">(</span><span class="st">"guerra"</span>, grid <span class="op">=</span> <span class="st">"none"</span><span class="op">)</span></span></code></pre></div>
+<p><img src="palette-styles_files/figure-html/unnamed-chunk-12-1.png" class="r-plt" alt="" width="840"></p>
+<div class="sourceCode" id="cb14"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html" class="external-link">ggplot</a></span><span class="op">(</span><span class="va">mpg</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html" class="external-link">aes</a></span><span class="op">(</span><span class="va">class</span>, fill <span class="op">=</span> <span class="va">drv</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_bar.html" class="external-link">geom_bar</a></span><span class="op">(</span>width <span class="op">=</span> <span class="fl">0.75</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="../reference/portinari_scales.html">scale_fill_portinari</a></span><span class="op">(</span><span class="st">"paz"</span>, name <span class="op">=</span> <span class="st">"Drive"</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html" class="external-link">labs</a></span><span class="op">(</span>title <span class="op">=</span> <span class="st">"Cars by class"</span>, subtitle <span class="op">=</span> <span class="st">"The golden light of Peace"</span>,</span>
+<span>       x <span class="op">=</span> <span class="cn">NULL</span>, y <span class="op">=</span> <span class="st">"Cars"</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="../reference/theme_portinari.html">theme_portinari</a></span><span class="op">(</span><span class="st">"paz"</span><span class="op">)</span></span></code></pre></div>
+<p><img src="palette-styles_files/figure-html/unnamed-chunk-13-1.png" class="r-plt" alt="" width="840"></p>
+<p>On a light mood, a palette’s lightest color sits close to the ground:
+that suits filled areas, where it reads as neutral, but not points or
+lines. On the <code>guerra</code> mood, prefer palettes other than
+<code>guerra</code> and <code>guerra_azul</code>, whose darkest color is
+the ground itself.</p>
 </div>
 <div class="section level2">
 <h2 id="colorblind-safety">Colorblind safety<a class="anchor" aria-label="anchor" href="#colorblind-safety"></a>
@@ -173,11 +231,11 @@ for correlation matrices.</p>
 <p><code>colorblind = TRUE</code> restricts any palette to colors that
 stay distinct under protanopia, deuteranopia and tritanopia
 simulation.</p>
-<div class="sourceCode" id="cb11"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb15"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="../reference/portinari.pal.html">portinari.pal</a></span><span class="op">(</span><span class="st">"sofia"</span>, colorblind <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span></code></pre></div>
 <pre><code><span><span class="co">## &lt;Portinari palette 'sofia'&gt; 3 colors</span></span>
 <span><span class="co">## [1] "#2F5E46" "#F2E8DC" "#D96B7A"</span></span></code></pre>
-<div class="sourceCode" id="cb13"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb17"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="../reference/portinari.cvd.check.html">portinari.cvd.check</a></span><span class="op">(</span><span class="st">"sofia"</span><span class="op">)</span></span></code></pre></div>
 <pre><code><span><span class="co">##   n   normal protanopia deuteranopia tritanopia colorblind_safe</span></span>
 <span><span class="co">## 1 2 70.64010  18.331205     28.30175   82.36919            TRUE</span></span>

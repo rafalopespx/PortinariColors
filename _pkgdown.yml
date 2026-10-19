@@ -22,9 +22,10 @@ reference:
       - portinari.pal
       - portinari.palettes
       - show_portinari
-  - title: ggplot2 scales
+  - title: ggplot2 scales and theme
     contents:
       - portinari_scales
+      - theme_portinari
   - title: Paintings and accessibility
     contents:
       - portinari.works

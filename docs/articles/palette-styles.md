@@ -6,16 +6,17 @@ the kind of data they suit.
 \
 [`portinari.palettes`](https://rafalopespx.github.io/PortinariColors/reference/portinari.palettes.md)`(``)``[``, `[`c`](https://rdrr.io/r/base/c.html)`(``"palette"``, ``"category"``, ``"n_colors"``, ``"cvd_n"``)``]`
 
-    ##       palette    category n_colors cvd_n
-    ## 1        cafe qualitative        6     6
-    ## 2         paz qualitative        8     4
-    ## 3  retirantes   diverging        8     8
-    ## 4        inah   diverging        5     4
-    ## 5       sofia   diverging        5     3
-    ## 6  terra_roxa   diverging        9     9
-    ## 7      guerra   diverging        9     9
-    ## 8 guerra_azul  sequential        6     6
-    ## 9    paz_ouro  sequential        4     4
+    ##        palette    category n_colors cvd_n
+    ## 1         cafe qualitative        6     6
+    ## 2          paz qualitative        8     4
+    ## 3   retirantes   diverging        8     8
+    ## 4         inah   diverging        5     4
+    ## 5        sofia   diverging        5     3
+    ## 6   terra_roxa   diverging        9     9
+    ## 7       guerra   diverging        9     9
+    ## 8  guerra_azul  sequential        6     6
+    ## 9   roxa_terra  sequential        8     8
+    ## 10    paz_ouro  sequential        4     4
 
 ## Qualitative: unordered groups
 
@@ -52,6 +53,27 @@ the rest evenly.
 
 ![](palette-styles_files/figure-html/unnamed-chunk-5-1.png)
 
+`roxa_terra` runs from the soil black of *Coffee Agricultural Worker*
+through its plums to the pale citrine of *Guerra*, the lightest color of
+`guerra_azul`, so even its lightest values stay visible on a white page.
+Here it maps the elevation of Maungawhau volcano.
+
+\
+`volcano_long`` ``<-`` `[`data.frame`](https://rdrr.io/r/base/data.frame.html)`(`\
+`  x ``=`` `[`rep`](https://rdrr.io/r/base/rep.html)`(`[`seq_len`](https://rdrr.io/r/base/seq.html)`(`[`nrow`](https://rdrr.io/r/base/nrow.html)`(``volcano``)``)``, `[`ncol`](https://rdrr.io/r/base/nrow.html)`(``volcano``)``)``,`\
+`  y ``=`` `[`rep`](https://rdrr.io/r/base/rep.html)`(`[`seq_len`](https://rdrr.io/r/base/seq.html)`(`[`ncol`](https://rdrr.io/r/base/nrow.html)`(``volcano``)``)``, each ``=`` `[`nrow`](https://rdrr.io/r/base/nrow.html)`(``volcano``)``)``,`\
+`  height ``=`` `[`as.vector`](https://rdrr.io/r/base/vector.html)`(``volcano``)`\
+`)`\
+[`ggplot`](https://ggplot2.tidyverse.org/reference/ggplot.html)`(``volcano_long``, `[`aes`](https://ggplot2.tidyverse.org/reference/aes.html)`(``x``, ``y``, fill ``=`` ``height``)``)`` ``+`\
+`  `[`geom_raster`](https://ggplot2.tidyverse.org/reference/geom_tile.html)`(``)`` ``+`\
+`  `[`scale_fill_portinari`](https://rafalopespx.github.io/PortinariColors/reference/portinari_scales.md)`(``"roxa_terra"``, type ``=`` ``"continuous"``, direction ``=`` ``-``1``,`\
+`                       name ``=`` ``"Height (m)"``)`` ``+`\
+`  `[`coord_equal`](https://ggplot2.tidyverse.org/reference/coord_fixed.html)`(``expand ``=`` ``FALSE``)`` ``+`\
+`  `[`labs`](https://ggplot2.tidyverse.org/reference/labs.html)`(``x ``=`` ``NULL``, y ``=`` ``NULL``)`` ``+`\
+`  `[`theme`](https://ggplot2.tidyverse.org/reference/theme.html)`(``axis.text ``=`` `[`element_blank`](https://ggplot2.tidyverse.org/reference/element.html)`(``)``)`
+
+![](palette-styles_files/figure-html/unnamed-chunk-6-1.png)
+
 ## Diverging: values around a midpoint
 
 Two dark arms meet in a light center, so the middle of the scale reads
@@ -61,12 +83,12 @@ each arm evenly.
 \
 [`show_portinari`](https://rafalopespx.github.io/PortinariColors/reference/show_portinari.md)`(``category ``=`` ``"diverging"``)`
 
-![](palette-styles_files/figure-html/unnamed-chunk-6-1.png)
+![](palette-styles_files/figure-html/unnamed-chunk-7-1.png)
 
-`terra_roxa` sets the plum of a Portinari suit against the green of a
-coffee plantation, a classic purple-green diverging scheme. It is
-colorblind-safe for all nine colors, which makes it a good default for
-correlation matrices.
+`terra_roxa` sets the plum of a coffee worker’s shirt against the green
+of the plantation behind him, a classic purple-green diverging scheme.
+It is colorblind-safe for all nine colors, which makes it a good default
+for correlation matrices.
 
 \
 `cors`` ``<-`` `[`cor`](https://rdrr.io/r/stats/cor.html)`(``mtcars``)`\
@@ -85,7 +107,7 @@ correlation matrices.
 `  `[`labs`](https://ggplot2.tidyverse.org/reference/labs.html)`(``x ``=`` ``NULL``, y ``=`` ``NULL``)`` ``+`\
 `  `[`theme`](https://ggplot2.tidyverse.org/reference/theme.html)`(``panel.grid ``=`` `[`element_blank`](https://ggplot2.tidyverse.org/reference/element.html)`(``)``)`
 
-![](palette-styles_files/figure-html/unnamed-chunk-7-1.png)
+![](palette-styles_files/figure-html/unnamed-chunk-8-1.png)
 
 \
 `cars`` ``<-`` `[`transform`](https://rdrr.io/r/base/transform.html)`(``mtcars``, car ``=`` `[`rownames`](https://rdrr.io/r/base/colnames.html)`(``mtcars``)``, diff ``=`` ``mpg`` ``-`` `[`mean`](https://rdrr.io/r/base/mean.html)`(``mpg``)``)`\
@@ -94,7 +116,7 @@ correlation matrices.
 `  `[`scale_fill_portinari`](https://rafalopespx.github.io/PortinariColors/reference/portinari_scales.md)`(``"guerra"``, type ``=`` ``"continuous"``, limits ``=`` `[`c`](https://rdrr.io/r/base/c.html)`(``-``15``, ``15``)``)`` ``+`\
 `  `[`labs`](https://ggplot2.tidyverse.org/reference/labs.html)`(``x ``=`` ``"mpg relative to the mean"``, y ``=`` ``NULL``)`
 
-![](palette-styles_files/figure-html/unnamed-chunk-8-1.png)
+![](palette-styles_files/figure-html/unnamed-chunk-9-1.png)
 
 \
 `likert`` ``<-`` `[`data.frame`](https://rdrr.io/r/base/data.frame.html)`(`\
@@ -109,7 +131,50 @@ correlation matrices.
 `  `[`labs`](https://ggplot2.tidyverse.org/reference/labs.html)`(``x ``=`` ``"%"``, y ``=`` ``NULL``)`` ``+`\
 `  `[`theme`](https://ggplot2.tidyverse.org/reference/theme.html)`(``legend.position ``=`` ``"bottom"``)`
 
-![](palette-styles_files/figure-html/unnamed-chunk-9-1.png)
+![](palette-styles_files/figure-html/unnamed-chunk-10-1.png)
+
+## A Portinari canvas for your plots
+
+[`theme_portinari()`](https://rafalopespx.github.io/PortinariColors/reference/theme_portinari.md)
+completes the look: a raw-linen ground, firm drawn axis lines,
+earth-colored lettering and a painted frame. The `guerra` and `paz`
+moods follow the two United Nations panels.
+
+\
+[`ggplot`](https://ggplot2.tidyverse.org/reference/ggplot.html)`(``mtcars``, `[`aes`](https://ggplot2.tidyverse.org/reference/aes.html)`(``wt``, ``mpg``, colour ``=`` `[`factor`](https://rdrr.io/r/base/factor.html)`(``cyl``)``)``)`` ``+`\
+`  `[`geom_point`](https://ggplot2.tidyverse.org/reference/geom_point.html)`(``size ``=`` ``3``)`` ``+`\
+`  `[`scale_color_portinari`](https://rafalopespx.github.io/PortinariColors/reference/portinari_scales.md)`(``"paz"``, name ``=`` ``"Cylinders"``)`` ``+`\
+`  `[`labs`](https://ggplot2.tidyverse.org/reference/labs.html)`(``title ``=`` ``"Fuel economy"``, subtitle ``=`` ``"Heavier cars travel less per gallon"``,`\
+`       x ``=`` ``"Weight (1000 lb)"``, y ``=`` ``"Miles per gallon"``)`` ``+`\
+`  `[`theme_portinari`](https://rafalopespx.github.io/PortinariColors/reference/theme_portinari.md)`(``)`
+
+![](palette-styles_files/figure-html/unnamed-chunk-11-1.png)
+
+\
+[`ggplot`](https://ggplot2.tidyverse.org/reference/ggplot.html)`(``faithfuld``, `[`aes`](https://ggplot2.tidyverse.org/reference/aes.html)`(``waiting``, ``eruptions``, fill ``=`` ``density``)``)`` ``+`\
+`  `[`geom_raster`](https://ggplot2.tidyverse.org/reference/geom_tile.html)`(``)`` ``+`\
+`  `[`scale_fill_portinari`](https://rafalopespx.github.io/PortinariColors/reference/portinari_scales.md)`(``"guerra"``, type ``=`` ``"continuous"``)`` ``+`\
+`  `[`coord_cartesian`](https://ggplot2.tidyverse.org/reference/coord_cartesian.html)`(``expand ``=`` ``FALSE``)`` ``+`\
+`  `[`labs`](https://ggplot2.tidyverse.org/reference/labs.html)`(``title ``=`` ``"Old Faithful"``, subtitle ``=`` ``"The ground of War"``,`\
+`       x ``=`` ``"Waiting (min)"``, y ``=`` ``"Eruption (min)"``)`` ``+`\
+`  `[`theme_portinari`](https://rafalopespx.github.io/PortinariColors/reference/theme_portinari.md)`(``"guerra"``, grid ``=`` ``"none"``)`
+
+![](palette-styles_files/figure-html/unnamed-chunk-12-1.png)
+
+\
+[`ggplot`](https://ggplot2.tidyverse.org/reference/ggplot.html)`(``mpg``, `[`aes`](https://ggplot2.tidyverse.org/reference/aes.html)`(``class``, fill ``=`` ``drv``)``)`` ``+`\
+`  `[`geom_bar`](https://ggplot2.tidyverse.org/reference/geom_bar.html)`(``width ``=`` ``0.75``)`` ``+`\
+`  `[`scale_fill_portinari`](https://rafalopespx.github.io/PortinariColors/reference/portinari_scales.md)`(``"paz"``, name ``=`` ``"Drive"``)`` ``+`\
+`  `[`labs`](https://ggplot2.tidyverse.org/reference/labs.html)`(``title ``=`` ``"Cars by class"``, subtitle ``=`` ``"The golden light of Peace"``,`\
+`       x ``=`` ``NULL``, y ``=`` ``"Cars"``)`` ``+`\
+`  `[`theme_portinari`](https://rafalopespx.github.io/PortinariColors/reference/theme_portinari.md)`(``"paz"``)`
+
+![](palette-styles_files/figure-html/unnamed-chunk-13-1.png)
+
+On a light mood, a palette’s lightest color sits close to the ground:
+that suits filled areas, where it reads as neutral, but not points or
+lines. On the `guerra` mood, prefer palettes other than `guerra` and
+`guerra_azul`, whose darkest color is the ground itself.
 
 ## Colorblind safety
 

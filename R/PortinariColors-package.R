@@ -6,4 +6,5 @@
 #' colorblind-safety check.
 #'
 #' @keywords internal
+#' @importFrom ggplot2 %+replace%
 "_PACKAGE"

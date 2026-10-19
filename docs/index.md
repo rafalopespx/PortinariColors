@@ -50,6 +50,7 @@ in CIELAB.
 | [`portinari.pal()`](https://rafalopespx.github.io/PortinariColors/reference/portinari.pal.md) | Get a palette as hex colors (discrete or continuous) |
 | [`scale_color_portinari()`](https://rafalopespx.github.io/PortinariColors/reference/portinari_scales.md) / [`scale_colour_portinari()`](https://rafalopespx.github.io/PortinariColors/reference/portinari_scales.md) | `ggplot2` color scale |
 | [`scale_fill_portinari()`](https://rafalopespx.github.io/PortinariColors/reference/portinari_scales.md) | `ggplot2` fill scale |
+| [`theme_portinari()`](https://rafalopespx.github.io/PortinariColors/reference/theme_portinari.md) | `ggplot2` theme with a Portinari canvas, in three moods |
 | [`portinari.palettes()`](https://rafalopespx.github.io/PortinariColors/reference/portinari.palettes.md) | Table of palettes by style, with colorblind status |
 | [`portinari.works()`](https://rafalopespx.github.io/PortinariColors/reference/portinari.works.md) | The paintings behind each palette, with links |
 | [`portinari.cvd.check()`](https://rafalopespx.github.io/PortinariColors/reference/portinari.cvd.check.md) | Colorblind simulation for a palette |
@@ -60,19 +61,43 @@ and the scale functions share the same arguments:
 `type = "discrete" | "continuous"`, `direction = 1 | -1`, and
 `colorblind = TRUE | FALSE`.
 
+## A Portinari theme
+
+[`theme_portinari()`](https://rafalopespx.github.io/PortinariColors/reference/theme_portinari.md)
+dresses a plot like one of Portinari’s canvases: a warm ground of raw
+linen, firm drawn axis lines instead of a boxed panel, earth-colored
+lettering and a thin painted frame. Two more moods follow his United
+Nations panels: the deep indigo of *Guerra* and the golden light of
+*Paz*.
+
+\
+[`ggplot`](https://ggplot2.tidyverse.org/reference/ggplot.html)`(``mtcars``, `[`aes`](https://ggplot2.tidyverse.org/reference/aes.html)`(``wt``, ``mpg``, colour ``=`` `[`factor`](https://rdrr.io/r/base/factor.html)`(``cyl``)``)``)`` ``+`\
+`  `[`geom_point`](https://ggplot2.tidyverse.org/reference/geom_point.html)`(``size ``=`` ``3``)`` ``+`\
+`  `[`scale_color_portinari`](https://rafalopespx.github.io/PortinariColors/reference/portinari_scales.md)`(``"paz"``, name ``=`` ``"Cylinders"``)`` ``+`\
+`  `[`labs`](https://ggplot2.tidyverse.org/reference/labs.html)`(``title ``=`` ``"Fuel economy"``, subtitle ``=`` ``"Heavier cars travel less per gallon"``)`` ``+`\
+`  `[`theme_portinari`](https://rafalopespx.github.io/PortinariColors/reference/theme_portinari.md)`(``)``                 ``# or theme_portinari("guerra"), ("paz")`
+
+Options: `grid = "y" | "x" | "xy" | "none"`, `frame = TRUE | FALSE`, and
+the usual `base_size` and `base_family`. All text meets WCAG AA contrast
+in every mood. On a light mood, a palette’s lightest color sits close to
+the ground, so keep it for filled areas rather than points or lines; on
+the `guerra` mood, prefer palettes other than `guerra` and
+`guerra_azul`, whose darkest color is the ground itself.
+
 ## Palettes
 
 | Palette | Style | Colors | Colorblind-safe | Works |
 |----|----|----|----|----|
 | `cafe` | qualitative | 6 | all 6 | Coffee Agricultural Worker; Saint Francis |
 | `paz` | qualitative | 8 | 4 | *Paz* (Peace), UN Headquarters panel |
-| `retirantes` | diverging | 8 | all 8 | Northeastern Migrants; Dead Child; Bust of the Poet Felippe d’Oliveira; Mr. Queiroz Lima |
+| `retirantes` | diverging | 8 | all 8 | Northeastern Migrants; Dead Child; Bust of the Poet Felippe d’Oliveira |
 | `inah` | diverging | 5 | 4 | Portrait of Ináh Prudente de Moraes |
 | `sofia` | diverging | 5 | 3 | Portrait of Sofia Cantalupo |
-| `terra_roxa` | diverging | 9 | all 9 | Coffee Agricultural Worker; Mr. Queiroz Lima |
+| `terra_roxa` | diverging | 9 | all 9 | Coffee Agricultural Worker |
 | `guerra` | diverging | 9 | all 9 | *Guerra* (War), UN Headquarters panel |
 | `guerra_azul` | sequential | 6 | all 6 | Blue scale of *Guerra* |
 | `paz_ouro` | sequential | 4 | all 4 | Earth-to-gold run of *Paz* |
+| `roxa_terra` | sequential | 8 | all 8 | Coffee Agricultural Worker; *Guerra* (War) |
 
 See [The
 paintings](https://rafalopespx.github.io/PortinariColors/articles/paintings.html)
@@ -82,13 +107,13 @@ for when to use each style.
 
 Palettes are merged when they are too similar. Candidate palettes were
 compared by mean CIELAB distance. Two groups were merged this way: the
-migrant-series works with the ‘Felippe d’Oliveira bust’ and the ‘Queiroz
-Lima’ portrait, and the ‘Coffee Agricultural Worker’ with ‘Saint
-Francis’. `guerra` and `paz` are distinct from every other palette
-(closest: `paz` vs `cafe`, dE 18.9), so they stay separate.
-`guerra_azul` and `paz_ouro` are sequential subsets of the two panels
-and are kept on purpose: they serve a different kind of data rather than
-duplicating a palette.
+migrant-series works with the ‘Felippe d’Oliveira bust’, and the ‘Coffee
+Agricultural Worker’ with ‘Saint Francis’. `guerra` and `paz` are
+distinct from every other palette (closest: `paz` vs `cafe`, dE 18.9),
+so they stay separate. `guerra_azul`, `paz_ouro` and `roxa_terra` are
+sequential companions of `guerra`, `paz` and `terra_roxa` and are kept
+on purpose: they share colors with their diverging or qualitative parent
+but serve a different kind of data.
 
 Use `colorblind = TRUE` to keep only the colorblind-safe colors of a
 palette:
@@ -109,9 +134,10 @@ golden yellows. Treat them as a starting point.
 site is reachable, and `data-raw/palette_selection.py` reproduces the
 merge and colorblind analysis.
 
-The exception is `terra_roxa`, whose colors were sampled from the MASP
-images of *Coffee Agricultural Worker* and *Mr. Queiroz Lima*
-(`data-raw/terra_roxa.py`).
+The exceptions are `terra_roxa` and `roxa_terra`, whose colors were
+sampled from the MASP image of *Coffee Agricultural Worker*
+(`data-raw/terra_roxa.py`). `roxa_terra` ends on the pale citrine of
+`guerra_azul`, reached through two interpolated tints.
 
 ## Colorblind safety
 

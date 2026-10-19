@@ -73,7 +73,7 @@ portinari.pal("cafe")
 #> [1] "#2B4C7E" "#5B3B2A" "#6E7F4A" "#F3E2C0" "#E8B04B" "#B33A2A"
 portinari.pal("retirantes", n = 3)
 #> <Portinari palette 'retirantes'> 3 colors
-#> [1] "#3F5670" "#EFE9E0" "#1F1B18"
+#> [1] "#3F5670" "#D9CBB2" "#1F1B18"
 portinari.pal("guerra_azul", n = 20, type = "continuous")
 #> <Portinari palette 'guerra_azul'> 20 colors
 #>  [1] "#2A1E4A" "#2B275B" "#2B306D" "#28397F" "#264290" "#2D4E9A" "#345BA4"

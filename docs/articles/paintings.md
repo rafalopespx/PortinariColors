@@ -7,11 +7,11 @@ are the two panels he painted for the United Nations Headquarters in New
 York. Click an image or title to open the work’s page.
 
 The palettes are an interpretation of each work’s dominant tones, not a
-measurement of it. The exception is `terra_roxa`, whose colors were
-sampled from the MASP images: the purples of the worker’s shirt and
-Queiroz Lima’s suit, and the pale greens of the coffee rows and hills.
-Images are shown from the MASP collection site and remain under
-copyright.
+measurement of it. The exceptions are `terra_roxa` and `roxa_terra`,
+whose colors were sampled from the MASP image of *Coffee Agricultural
+Worker*: the purples of the worker’s shirt, the pale greens of the
+coffee rows and hills, and the near-black soil at his feet. Images are
+shown from the MASP collection site and remain under copyright.
 
 ## `cafe`
 
@@ -40,7 +40,7 @@ MASP, São Paulo · MASP.00321
 **Diverging** · 8 colors · colorblind-friendly
 
 Cool slate to warm earth through cream: the dusty tones of the Migrant
-series and portraits.
+series and the Felippe d’Oliveira bust.
 
 [![Northeastern Migrants, from the Migrant
 Series](https://assets.masp.org.br/uploads/temp/WEB_IFUSP_MASP_00324_01.jpg)](https://masp.org.br/en/collections/works/northeastern-migrants-from-the-migrant-series-1944-1945)
@@ -65,14 +65,6 @@ Series](https://assets.masp.org.br/uploads/temp/WEB_JM_MASP_00568_01.jpg)](https
 Series*](https://masp.org.br/en/collections/works/bust-of-the-poet-felippe-daudt-doliveira-from-the-portraits-series),
 1933\
 MASP, São Paulo · MASP.00568
-
-[![Mr. Queiroz Lima, from the Portraits
-Series](https://assets.masp.org.br/uploads/temp/WEB_JM_MASP_00323_01.jpg)](https://masp.org.br/en/collections/works/mr-queiroz-lima-from-the-portraits-series)
-
-[*Mr. Queiroz Lima, from the Portraits
-Series*](https://masp.org.br/en/collections/works/mr-queiroz-lima-from-the-portraits-series),
-1934\
-MASP, São Paulo · MASP.00323
 
 ## `inah`
 
@@ -116,14 +108,6 @@ Worker*](https://masp.org.br/en/collections/works/coffee-agricultural-worker),
 1934\
 MASP, São Paulo · MASP.00519
 
-[![Mr. Queiroz Lima, from the Portraits
-Series](https://assets.masp.org.br/uploads/temp/WEB_JM_MASP_00323_01.jpg)](https://masp.org.br/en/collections/works/mr-queiroz-lima-from-the-portraits-series)
-
-[*Mr. Queiroz Lima, from the Portraits
-Series*](https://masp.org.br/en/collections/works/mr-queiroz-lima-from-the-portraits-series),
-1934\
-MASP, São Paulo · MASP.00323
-
 ## `guerra`
 
 **Diverging** · 9 colors · colorblind-friendly
@@ -154,12 +138,17 @@ sky blue.
 1952–1956\
 United Nations Headquarters, New York
 
-## Derived sequential palettes
+## Sequential palettes
 
 `guerra_azul` and `paz_ouro` are taken from the panels above: the blue
 scale of *Guerra* and the earth-to-gold run of *Paz*, ordered from dark
-to light.
+to light. `roxa_terra` is the sequential companion to `terra_roxa`: it
+rises from the near-black soil of *Coffee Agricultural Worker* through
+the plums of the worker’s shirt to the pale citrine of *Guerra*, the
+lightest color of `guerra_azul`.
 
 **`guerra_azul`**
 
 **`paz_ouro`**
+
+**`roxa_terra`**

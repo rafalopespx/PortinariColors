@@ -15,7 +15,6 @@ works <- c(
   "saint-francis"              = "https://masp.org.br/en/collections/works/saint-francis",
   "portrait-of-inah-prudente-de-moraes" = "https://masp.org.br/en/collections/works/portrait-of-inah-prudente-de-moraes-from-the-portraits-series",
   "coffee-agricultural-worker" = "https://masp.org.br/en/collections/works/coffee-agricultural-worker",
-  "mr-queiroz-lima"            = "https://masp.org.br/en/collections/works/mr-queiroz-lima-from-the-portraits-series",
   "bust-of-the-poet-felippe-daudt-doliveira" = "https://masp.org.br/en/collections/works/bust-of-the-poet-felippe-daudt-doliveira-from-the-portraits-series",
   "portrait-of-sofia-cantalupo" = "https://masp.org.br/en/collections/works/portrait-of-sofia-cantalupo"
 )

@@ -17,9 +17,12 @@
 #            keeps a CIE76 dE of at least 10 under protanopia, deuteranopia
 #            and tritanopia simulation (see portinari.cvd.check()).
 #
-# IMPORTANT: except for terra_roxa, the hex values are hand-estimated from the
-# dominant tones of each work and were NOT sampled from images. terra_roxa was
-# sampled from the MASP images (see data-raw/terra_roxa.py). guerra and paz follow published
+# IMPORTANT: except for terra_roxa and roxa_terra, the hex values are
+# hand-estimated from the dominant tones of each work and were NOT sampled from
+# images. terra_roxa and roxa_terra were sampled from the MASP image of Coffee
+# Agricultural Worker (see
+# data-raw/terra_roxa.py); roxa_terra ends on the pale citrine of guerra_azul,
+# reached through two interpolated tints. guerra and paz follow published
 # descriptions of the UN panels' colors (Google Arts & Culture, Projeto
 # Portinari). data-raw/palette_selection.py reproduces every value here.
 .portinari_palettes <- list(
@@ -38,11 +41,11 @@
     description = "Golden yellows of a 'golden age', with ochre, orange, rose, olive and sky blue."
   ),
   retirantes = list(
-    colors = c("#3F5670", "#6F7C86", "#A69F94", "#EFE9E0", "#C9A36A", "#8B5A3C", "#5E5751", "#1F1B18"),
+    colors = c("#3F5670", "#6F7C86", "#A69F94", "#D9CBB2", "#C9A36A", "#8B5A3C", "#5E5751", "#1F1B18"),
     order = c(1L, 5L, 6L, 3L, 7L, 4L, 8L, 2L),
     category = "diverging",
     cvd_n = 8L,
-    description = "Cool slate to warm earth through cream: the dusty tones of the Migrant series and portraits."
+    description = "Cool slate to warm earth through cream: the dusty tones of the Migrant series and the Felippe d'Oliveira bust."
   ),
   inah = list(
     colors = c("#2D3E56", "#A9B8A4", "#F1E6D6", "#E8B9A0", "#C98F3D"),
@@ -59,7 +62,7 @@
     description = "Deep green and teal to gold and rose, through cream."
   ),
   terra_roxa = list(
-    colors = c("#3A1F29", "#59384F", "#825B7C", "#AD87A4", "#CFD5C2", "#A0BB8D", "#678868", "#516441", "#333D29"),
+    colors = c("#35202E", "#59384F", "#825B7C", "#AD87A4", "#CFD5C2", "#A0BB8D", "#678868", "#516441", "#333D29"),
     order = c(1L, 6L, 4L, 8L, 3L, 7L, 5L, 9L, 2L),
     category = "diverging",
     cvd_n = 9L,
@@ -78,6 +81,13 @@
     category = "sequential",
     cvd_n = 6L,
     description = "The blue scale of Guerra, from violet-indigo to pale citrine."
+  ),
+  roxa_terra = list(
+    colors = c("#0B0F13", "#35202E", "#59384F", "#825B7C", "#AD87A4", "#BEA5A8", "#CDC4AB", "#DCE3AE"),
+    order = c(1L, 7L, 6L, 3L, 5L, 4L, 8L, 2L),
+    category = "sequential",
+    cvd_n = 8L,
+    description = "From the near-black soil at a coffee worker's feet, through the plums of his shirt, to the pale citrine of Guerra."
   ),
   paz_ouro = list(
     colors = c("#6B4425", "#C98A2B", "#E8B931", "#F4E6C2"),

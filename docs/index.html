@@ -132,6 +132,11 @@
 <code>ggplot2</code> fill scale</td>
 </tr>
 <tr>
+<td><code><a href="reference/theme_portinari.html">theme_portinari()</a></code></td>
+<td>
+<code>ggplot2</code> theme with a Portinari canvas, in three moods</td>
+</tr>
+<tr>
 <td><code><a href="reference/portinari.palettes.html">portinari.palettes()</a></code></td>
 <td>Table of palettes by style, with colorblind status</td>
 </tr>
@@ -150,6 +155,18 @@
 </tbody>
 </table>
 <p><code><a href="reference/portinari.pal.html">portinari.pal()</a></code> and the scale functions share the same arguments: <code>type = "discrete" | "continuous"</code>, <code>direction = 1 | -1</code>, and <code>colorblind = TRUE | FALSE</code>.</p>
+</div>
+<div class="section level2">
+<h2 id="a-portinari-theme">A Portinari theme<a class="anchor" aria-label="anchor" href="#a-portinari-theme"></a>
+</h2>
+<p><code><a href="reference/theme_portinari.html">theme_portinari()</a></code> dresses a plot like one of Portinari’s canvases: a warm ground of raw linen, firm drawn axis lines instead of a boxed panel, earth-colored lettering and a thin painted frame. Two more moods follow his United Nations panels: the deep indigo of <em>Guerra</em> and the golden light of <em>Paz</em>.</p>
+<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html" class="external-link">ggplot</a></span><span class="op">(</span><span class="va">mtcars</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html" class="external-link">aes</a></span><span class="op">(</span><span class="va">wt</span>, <span class="va">mpg</span>, colour <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/factor.html" class="external-link">factor</a></span><span class="op">(</span><span class="va">cyl</span><span class="op">)</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_point.html" class="external-link">geom_point</a></span><span class="op">(</span>size <span class="op">=</span> <span class="fl">3</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="reference/portinari_scales.html">scale_color_portinari</a></span><span class="op">(</span><span class="st">"paz"</span>, name <span class="op">=</span> <span class="st">"Cylinders"</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html" class="external-link">labs</a></span><span class="op">(</span>title <span class="op">=</span> <span class="st">"Fuel economy"</span>, subtitle <span class="op">=</span> <span class="st">"Heavier cars travel less per gallon"</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="reference/theme_portinari.html">theme_portinari</a></span><span class="op">(</span><span class="op">)</span>                 <span class="co"># or theme_portinari("guerra"), ("paz")</span></span></code></pre></div>
+<p>Options: <code>grid = "y" | "x" | "xy" | "none"</code>, <code>frame = TRUE | FALSE</code>, and the usual <code>base_size</code> and <code>base_family</code>. All text meets WCAG AA contrast in every mood. On a light mood, a palette’s lightest color sits close to the ground, so keep it for filled areas rather than points or lines; on the <code>guerra</code> mood, prefer palettes other than <code>guerra</code> and <code>guerra_azul</code>, whose darkest color is the ground itself.</p>
 </div>
 <div class="section level2">
 <h2 id="palettes">Palettes<a class="anchor" aria-label="anchor" href="#palettes"></a>
@@ -190,7 +207,7 @@
 <td>diverging</td>
 <td>8</td>
 <td>all 8</td>
-<td>Northeastern Migrants; Dead Child; Bust of the Poet Felippe d’Oliveira; Mr. Queiroz Lima</td>
+<td>Northeastern Migrants; Dead Child; Bust of the Poet Felippe d’Oliveira</td>
 </tr>
 <tr>
 <td><code>inah</code></td>
@@ -211,7 +228,7 @@
 <td>diverging</td>
 <td>9</td>
 <td>all 9</td>
-<td>Coffee Agricultural Worker; Mr. Queiroz Lima</td>
+<td>Coffee Agricultural Worker</td>
 </tr>
 <tr>
 <td><code>guerra</code></td>
@@ -237,12 +254,19 @@
 <td>Earth-to-gold run of <em>Paz</em>
 </td>
 </tr>
+<tr>
+<td><code>roxa_terra</code></td>
+<td>sequential</td>
+<td>8</td>
+<td>all 8</td>
+<td>Coffee Agricultural Worker; <em>Guerra</em> (War)</td>
+</tr>
 </tbody>
 </table>
 <p>See <a href="https://rafalopespx.github.io/PortinariColors/articles/paintings.html">The paintings</a> for images and links to every work, and <a href="https://rafalopespx.github.io/PortinariColors/articles/palette-styles.html">Choosing a palette style</a> for when to use each style.</p>
-<p>Palettes are merged when they are too similar. Candidate palettes were compared by mean CIELAB distance. Two groups were merged this way: the migrant-series works with the ‘Felippe d’Oliveira bust’ and the ‘Queiroz Lima’ portrait, and the ‘Coffee Agricultural Worker’ with ‘Saint Francis’. <code>guerra</code> and <code>paz</code> are distinct from every other palette (closest: <code>paz</code> vs <code>cafe</code>, dE 18.9), so they stay separate. <code>guerra_azul</code> and <code>paz_ouro</code> are sequential subsets of the two panels and are kept on purpose: they serve a different kind of data rather than duplicating a palette.</p>
+<p>Palettes are merged when they are too similar. Candidate palettes were compared by mean CIELAB distance. Two groups were merged this way: the migrant-series works with the ‘Felippe d’Oliveira bust’, and the ‘Coffee Agricultural Worker’ with ‘Saint Francis’. <code>guerra</code> and <code>paz</code> are distinct from every other palette (closest: <code>paz</code> vs <code>cafe</code>, dE 18.9), so they stay separate. <code>guerra_azul</code>, <code>paz_ouro</code> and <code>roxa_terra</code> are sequential companions of <code>guerra</code>, <code>paz</code> and <code>terra_roxa</code> and are kept on purpose: they share colors with their diverging or qualitative parent but serve a different kind of data.</p>
 <p>Use <code>colorblind = TRUE</code> to keep only the colorblind-safe colors of a palette:</p>
-<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="reference/portinari.pal.html">portinari.pal</a></span><span class="op">(</span><span class="st">"inah"</span>, colorblind <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span>      <span class="co"># 4 safe colors</span></span>
 <span><span class="fu"><a href="reference/portinari.cvd.check.html">portinari.cvd.check</a></span><span class="op">(</span><span class="st">"sofia"</span><span class="op">)</span>                  <span class="co"># see where the palette breaks down</span></span></code></pre></div>
 </div>
@@ -250,7 +274,7 @@
 <h2 id="important-colors-are-estimates">Important: colors are estimates<a class="anchor" aria-label="anchor" href="#important-colors-are-estimates"></a>
 </h2>
 <p>The hex values are hand-estimated from the dominant tones of each painting. They were <strong>not</strong> sampled from the MASP images. <code>guerra</code> and <code>paz</code> follow published descriptions of the panels: <em>Guerra</em> as “a symphony in blue” of deep violet tones over light blues tending to pale citrine, with an orange-to-red counterpoint, and <em>Paz</em> as dominated by golden yellows. Treat them as a starting point. <code>data-raw/extract_masp_palettes.R</code> samples the originals when the MASP site is reachable, and <code>data-raw/palette_selection.py</code> reproduces the merge and colorblind analysis.</p>
-<p>The exception is <code>terra_roxa</code>, whose colors were sampled from the MASP images of <em>Coffee Agricultural Worker</em> and <em>Mr. Queiroz Lima</em> (<code>data-raw/terra_roxa.py</code>).</p>
+<p>The exceptions are <code>terra_roxa</code> and <code>roxa_terra</code>, whose colors were sampled from the MASP image of <em>Coffee Agricultural Worker</em> (<code>data-raw/terra_roxa.py</code>). <code>roxa_terra</code> ends on the pale citrine of <code>guerra_azul</code>, reached through two interpolated tints.</p>
 </div>
 <div class="section level2">
 <h2 id="colorblind-safety">Colorblind safety<a class="anchor" aria-label="anchor" href="#colorblind-safety"></a>

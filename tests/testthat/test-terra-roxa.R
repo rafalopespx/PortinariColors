@@ -1,8 +1,8 @@
-# Tests for the proposed `terra_roxa` palette: purples from Coffee Agricultural
-# Worker (shirt, cut tree stumps) and Mr. Queiroz Lima (suit), pale greens from
-# the coffee rows and hills of Coffee Agricultural Worker.
+# Tests for the `terra_roxa` palette, sampled from Coffee Agricultural Worker:
+# purples from the worker's shirt and the cut tree stumps, pale greens from the
+# coffee rows and hills, and the off-white trousers as the light center.
 
-terra_roxa <- c("#3A1F29", "#59384F", "#825B7C", "#AD87A4", "#CFD5C2",
+terra_roxa <- c("#35202E", "#59384F", "#825B7C", "#AD87A4", "#CFD5C2",
                 "#A0BB8D", "#678868", "#516441", "#333D29")
 
 lab_of <- function(cols) {
@@ -45,9 +45,11 @@ test_that("terra_roxa is colorblind-safe for all 9 colors", {
   expect_gt(min(chk$normal), 14)
 })
 
-test_that("terra_roxa is distinct from every existing palette (merge rule)", {
+test_that("terra_roxa is distinct from every palette except its sequential companion", {
+  # roxa_terra is the sequential companion of terra_roxa and shares its plums on
+  # purpose (like guerra_azul with guerra), so the merge rule does not apply.
   la <- lab_of(terra_roxa)
-  for (p in setdiff(names(.portinari_palettes), "terra_roxa")) {
+  for (p in setdiff(names(.portinari_palettes), c("terra_roxa", "roxa_terra"))) {
     lb <- lab_of(.portinari_palettes[[p]]$colors)
     d <- as.matrix(stats::dist(rbind(la, lb)))[seq_len(nrow(la)), nrow(la) + seq_len(nrow(lb))]
     similarity <- (mean(apply(d, 1, min)) + mean(apply(d, 2, min))) / 2
