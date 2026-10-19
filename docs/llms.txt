@@ -69,6 +69,7 @@ and the scale functions share the same arguments:
 | `retirantes` | diverging | 8 | all 8 | Northeastern Migrants; Dead Child; Bust of the Poet Felippe d’Oliveira; Mr. Queiroz Lima |
 | `inah` | diverging | 5 | 4 | Portrait of Ináh Prudente de Moraes |
 | `sofia` | diverging | 5 | 3 | Portrait of Sofia Cantalupo |
+| `terra_roxa` | diverging | 9 | all 9 | Coffee Agricultural Worker; Mr. Queiroz Lima |
 | `guerra` | diverging | 9 | all 9 | *Guerra* (War), UN Headquarters panel |
 | `guerra_azul` | sequential | 6 | all 6 | Blue scale of *Guerra* |
 | `paz_ouro` | sequential | 4 | all 4 | Earth-to-gold run of *Paz* |
@@ -107,6 +108,10 @@ golden yellows. Treat them as a starting point.
 `data-raw/extract_masp_palettes.R` samples the originals when the MASP
 site is reachable, and `data-raw/palette_selection.py` reproduces the
 merge and colorblind analysis.
+
+The exception is `terra_roxa`, whose colors were sampled from the MASP
+images of *Coffee Agricultural Worker* and *Mr. Queiroz Lima*
+(`data-raw/terra_roxa.py`).
 
 ## Colorblind safety
 

@@ -17,8 +17,9 @@
 #            keeps a CIE76 dE of at least 10 under protanopia, deuteranopia
 #            and tritanopia simulation (see portinari.cvd.check()).
 #
-# IMPORTANT: the hex values are hand-estimated from the dominant tones of each
-# work and were NOT sampled from images. guerra and paz follow published
+# IMPORTANT: except for terra_roxa, the hex values are hand-estimated from the
+# dominant tones of each work and were NOT sampled from images. terra_roxa was
+# sampled from the MASP images (see data-raw/terra_roxa.py). guerra and paz follow published
 # descriptions of the UN panels' colors (Google Arts & Culture, Projeto
 # Portinari). data-raw/palette_selection.py reproduces every value here.
 .portinari_palettes <- list(
@@ -56,6 +57,13 @@
     category = "diverging",
     cvd_n = 3L,
     description = "Deep green and teal to gold and rose, through cream."
+  ),
+  terra_roxa = list(
+    colors = c("#3A1F29", "#59384F", "#825B7C", "#AD87A4", "#CFD5C2", "#A0BB8D", "#678868", "#516441", "#333D29"),
+    order = c(1L, 6L, 4L, 8L, 3L, 7L, 5L, 9L, 2L),
+    category = "diverging",
+    cvd_n = 9L,
+    description = "Plum and mauve to pale coffee greens through sage off-white."
   ),
   guerra = list(
     colors = c("#2A1E4A", "#24408E", "#3F6FB5", "#9CC3D9", "#B9D8C8", "#DCE3AE", "#E07A3A", "#D9748A", "#A8352E"),

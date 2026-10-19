@@ -7,8 +7,11 @@ are the two panels he painted for the United Nations Headquarters in New
 York. Click an image or title to open the work’s page.
 
 The palettes are an interpretation of each work’s dominant tones, not a
-measurement of it. Images are shown from the MASP collection site and
-remain under copyright.
+measurement of it. The exception is `terra_roxa`, whose colors were
+sampled from the MASP images: the purples of the worker’s shirt and
+Queiroz Lima’s suit, and the pale greens of the coffee rows and hills.
+Images are shown from the MASP collection site and remain under
+copyright.
 
 ## `cafe`
 
@@ -98,6 +101,28 @@ Cantalupo](https://assets.masp.org.br/uploads/temp/WEB_JB_MASP_01643_01.jpg)](ht
 Cantalupo*](https://masp.org.br/en/collections/works/portrait-of-sofia-cantalupo),
 1936\
 MASP, São Paulo · MASP.01643
+
+## `terra_roxa`
+
+**Diverging** · 9 colors · colorblind-friendly
+
+Plum and mauve to pale coffee greens through sage off-white.
+
+[![Coffee Agricultural
+Worker](https://assets.masp.org.br/uploads/temp/WEB_JM_MASP_00519_01.jpg)](https://masp.org.br/en/collections/works/coffee-agricultural-worker)
+
+[*Coffee Agricultural
+Worker*](https://masp.org.br/en/collections/works/coffee-agricultural-worker),
+1934\
+MASP, São Paulo · MASP.00519
+
+[![Mr. Queiroz Lima, from the Portraits
+Series](https://assets.masp.org.br/uploads/temp/WEB_JM_MASP_00323_01.jpg)](https://masp.org.br/en/collections/works/mr-queiroz-lima-from-the-portraits-series)
+
+[*Mr. Queiroz Lima, from the Portraits
+Series*](https://masp.org.br/en/collections/works/mr-queiroz-lima-from-the-portraits-series),
+1934\
+MASP, São Paulo · MASP.00323
 
 ## `guerra`
 

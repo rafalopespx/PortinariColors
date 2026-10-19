@@ -37,6 +37,8 @@ portinari.works()
 #> 8       sofia
 #> 9      guerra
 #> 10        paz
+#> 11 terra_roxa
+#> 12 terra_roxa
 #>                                                                   title
 #> 1                                            Coffee Agricultural Worker
 #> 2                                                         Saint Francis
@@ -48,6 +50,8 @@ portinari.works()
 #> 8                                           Portrait of Sofia Cantalupo
 #> 9                                                          Guerra (War)
 #> 10                                                          Paz (Peace)
+#> 11                                           Coffee Agricultural Worker
+#> 12                          Mr. Queiroz Lima, from the Portraits Series
 #>         year                            collection  inventory
 #> 1       1934                       MASP, São Paulo MASP.00519
 #> 2       1941                       MASP, São Paulo MASP.00321
@@ -59,6 +63,8 @@ portinari.works()
 #> 8       1936                       MASP, São Paulo MASP.01643
 #> 9  1952–1956 United Nations Headquarters, New York       <NA>
 #> 10 1952–1956 United Nations Headquarters, New York       <NA>
+#> 11      1934                       MASP, São Paulo MASP.00519
+#> 12      1934                       MASP, São Paulo MASP.00323
 #>                                                                                                            url
 #> 1                                          https://masp.org.br/en/collections/works/coffee-agricultural-worker
 #> 2                                                       https://masp.org.br/en/collections/works/saint-francis
@@ -70,6 +76,8 @@ portinari.works()
 #> 8                                         https://masp.org.br/en/collections/works/portrait-of-sofia-cantalupo
 #> 9                                         https://artsandculture.google.com/story/war-1952-1956/IQLSaZmD0m7gIQ
 #> 10                                      https://artsandculture.google.com/story/peace-1952-1956/PAKykLKUPJ4aKw
+#> 11                                         https://masp.org.br/en/collections/works/coffee-agricultural-worker
+#> 12                          https://masp.org.br/en/collections/works/mr-queiroz-lima-from-the-portraits-series
 #>                                                              image_url
 #> 1     https://assets.masp.org.br/uploads/temp/WEB_JM_MASP_00519_01.jpg
 #> 2     https://assets.masp.org.br/uploads/temp/WEB_JM_MASP_00321_01.jpg
@@ -81,6 +89,8 @@ portinari.works()
 #> 8     https://assets.masp.org.br/uploads/temp/WEB_JB_MASP_01643_01.jpg
 #> 9                                                                 <NA>
 #> 10                                                                <NA>
+#> 11    https://assets.masp.org.br/uploads/temp/WEB_JM_MASP_00519_01.jpg
+#> 12    https://assets.masp.org.br/uploads/temp/WEB_JM_MASP_00323_01.jpg
 portinari.works("retirantes")
 #>      palette
 #> 3 retirantes

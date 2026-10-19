@@ -12,9 +12,10 @@ the kind of data they suit.
     ## 3  retirantes   diverging        8     8
     ## 4        inah   diverging        5     4
     ## 5       sofia   diverging        5     3
-    ## 6      guerra   diverging        9     9
-    ## 7 guerra_azul  sequential        6     6
-    ## 8    paz_ouro  sequential        4     4
+    ## 6  terra_roxa   diverging        9     9
+    ## 7      guerra   diverging        9     9
+    ## 8 guerra_azul  sequential        6     6
+    ## 9    paz_ouro  sequential        4     4
 
 ## Qualitative: unordered groups
 
@@ -62,6 +63,30 @@ each arm evenly.
 
 ![](palette-styles_files/figure-html/unnamed-chunk-6-1.png)
 
+`terra_roxa` sets the plum of a Portinari suit against the green of a
+coffee plantation, a classic purple-green diverging scheme. It is
+colorblind-safe for all nine colors, which makes it a good default for
+correlation matrices.
+
+\
+`cors`` ``<-`` `[`cor`](https://rdrr.io/r/stats/cor.html)`(``mtcars``)`\
+`cors_long`` ``<-`` `[`data.frame`](https://rdrr.io/r/base/data.frame.html)`(`\
+`  x ``=`` `[`factor`](https://rdrr.io/r/base/factor.html)`(`[`rep`](https://rdrr.io/r/base/rep.html)`(`[`colnames`](https://rdrr.io/r/base/colnames.html)`(``cors``)``, each ``=`` `[`ncol`](https://rdrr.io/r/base/nrow.html)`(``cors``)``)``, levels ``=`` `[`colnames`](https://rdrr.io/r/base/colnames.html)`(``cors``)``)``,`\
+`  y ``=`` `[`factor`](https://rdrr.io/r/base/factor.html)`(`[`rep`](https://rdrr.io/r/base/rep.html)`(`[`colnames`](https://rdrr.io/r/base/colnames.html)`(``cors``)``, times ``=`` `[`ncol`](https://rdrr.io/r/base/nrow.html)`(``cors``)``)``, levels ``=`` `[`rev`](https://rdrr.io/r/base/rev.html)`(`[`colnames`](https://rdrr.io/r/base/colnames.html)`(``cors``)``)``)``,`\
+`  r ``=`` `[`as.vector`](https://rdrr.io/r/base/vector.html)`(``cors``)`\
+`)`\
+[`ggplot`](https://ggplot2.tidyverse.org/reference/ggplot.html)`(``cors_long``, `[`aes`](https://ggplot2.tidyverse.org/reference/aes.html)`(``x``, ``y``, fill ``=`` ``r``)``)`` ``+`\
+`  `[`geom_tile`](https://ggplot2.tidyverse.org/reference/geom_tile.html)`(``colour ``=`` ``"white"``, linewidth ``=`` ``0.6``)`` ``+`\
+`  `[`geom_text`](https://ggplot2.tidyverse.org/reference/geom_text.html)`(`[`aes`](https://ggplot2.tidyverse.org/reference/aes.html)`(``label ``=`` `[`sprintf`](https://rdrr.io/r/base/sprintf.html)`(``"%.1f"``, ``r``)``)``, size ``=`` ``2.8``,`\
+`            colour ``=`` `[`ifelse`](https://rdrr.io/r/base/ifelse.html)`(``cors_long``$``r`` ``<`` ``-``0.3`` ``|`` ``cors_long``$``r`` ``>`` ``0.55``, ``"white"``, ``"grey15"``)``)`` ``+`\
+`  `[`scale_fill_portinari`](https://rafalopespx.github.io/PortinariColors/reference/portinari_scales.md)`(``"terra_roxa"``, type ``=`` ``"continuous"``, limits ``=`` `[`c`](https://rdrr.io/r/base/c.html)`(``-``1``, ``1``)``,`\
+`                       name ``=`` ``"Correlation"``)`` ``+`\
+`  `[`coord_equal`](https://ggplot2.tidyverse.org/reference/coord_fixed.html)`(``)`` ``+`\
+`  `[`labs`](https://ggplot2.tidyverse.org/reference/labs.html)`(``x ``=`` ``NULL``, y ``=`` ``NULL``)`` ``+`\
+`  `[`theme`](https://ggplot2.tidyverse.org/reference/theme.html)`(``panel.grid ``=`` `[`element_blank`](https://ggplot2.tidyverse.org/reference/element.html)`(``)``)`
+
+![](palette-styles_files/figure-html/unnamed-chunk-7-1.png)
+
 \
 `cars`` ``<-`` `[`transform`](https://rdrr.io/r/base/transform.html)`(``mtcars``, car ``=`` `[`rownames`](https://rdrr.io/r/base/colnames.html)`(``mtcars``)``, diff ``=`` ``mpg`` ``-`` `[`mean`](https://rdrr.io/r/base/mean.html)`(``mpg``)``)`\
 [`ggplot`](https://ggplot2.tidyverse.org/reference/ggplot.html)`(``cars``, `[`aes`](https://ggplot2.tidyverse.org/reference/aes.html)`(``diff``, `[`reorder`](https://rdrr.io/r/stats/reorder.factor.html)`(``car``, ``diff``)``, fill ``=`` ``diff``)``)`` ``+`\
@@ -69,7 +94,7 @@ each arm evenly.
 `  `[`scale_fill_portinari`](https://rafalopespx.github.io/PortinariColors/reference/portinari_scales.md)`(``"guerra"``, type ``=`` ``"continuous"``, limits ``=`` `[`c`](https://rdrr.io/r/base/c.html)`(``-``15``, ``15``)``)`` ``+`\
 `  `[`labs`](https://ggplot2.tidyverse.org/reference/labs.html)`(``x ``=`` ``"mpg relative to the mean"``, y ``=`` ``NULL``)`
 
-![](palette-styles_files/figure-html/unnamed-chunk-7-1.png)
+![](palette-styles_files/figure-html/unnamed-chunk-8-1.png)
 
 \
 `likert`` ``<-`` `[`data.frame`](https://rdrr.io/r/base/data.frame.html)`(`\
@@ -84,7 +109,7 @@ each arm evenly.
 `  `[`labs`](https://ggplot2.tidyverse.org/reference/labs.html)`(``x ``=`` ``"%"``, y ``=`` ``NULL``)`` ``+`\
 `  `[`theme`](https://ggplot2.tidyverse.org/reference/theme.html)`(``legend.position ``=`` ``"bottom"``)`
 
-![](palette-styles_files/figure-html/unnamed-chunk-8-1.png)
+![](palette-styles_files/figure-html/unnamed-chunk-9-1.png)
 
 ## Colorblind safety
 

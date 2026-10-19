@@ -1,5 +1,12 @@
 # Changelog
 
+## PortinariColors (development version)
+
+- New diverging palette `terra_roxa`: plum and mauve from *Coffee
+  Agricultural Worker* and *Mr. Queiroz Lima* against the pale greens of
+  the coffee rows, through a sage off-white center. Its colors were
+  sampled from the MASP images, and all nine are colorblind-safe.
+
 ## PortinariColors 0.3.0
 
 - Initial CRAN submission.

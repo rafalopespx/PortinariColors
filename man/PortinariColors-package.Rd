@@ -21,7 +21,7 @@ Useful links:
 
 }
 \author{
-\strong{Maintainer}: Rafa Lopes \email{lopes1313@gmail.com} [copyright holder]
+\strong{Maintainer}: Rafa Lopes \email{lopes1313@gmail.com}
 
 }
 \keyword{internal}

@@ -55,11 +55,13 @@ Each palette is drawn from one or more works by Candido Portinari
 Headquarters in New York. Click an image or title to open the work's page.
 
 The palettes are an interpretation of each work's dominant tones, not a
-measurement of it. Images are shown from the MASP collection site and remain
+measurement of it. The exception is `terra_roxa`, whose colors were sampled
+from the MASP images: the purples of the worker's shirt and Queiroz Lima's
+suit, and the pale greens of the coffee rows and hills. Images are shown from the MASP collection site and remain
 under copyright.
 
 ```{r sections, results = "asis"}
-for (p in c("cafe", "retirantes", "inah", "sofia", "guerra", "paz")) palette_section(p)
+for (p in c("cafe", "retirantes", "inah", "sofia", "terra_roxa", "guerra", "paz")) palette_section(p)
 ```
 
 ## Derived sequential palettes
