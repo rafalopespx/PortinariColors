@@ -1,11 +1,20 @@
-# PortinariColors (development version)
+# PortinariColors 0.4.0
+
+## Breaking changes
+
+* `retirantes` changes one color. Its light center is now `#D9CBB2`, the palest
+  tone of *Northeastern Migrants*, instead of `#EFE9E0` (previously drawn from
+  *Mr. Queiroz Lima*, which is no longer a reference work). Plots that use the
+  center of `retirantes` will look slightly warmer and darker. The other seven
+  colors, their order and colorblind safety are unchanged.
+
+## New features
 
 * New `theme_portinari()`, a complete `ggplot2` theme in the spirit of
   Portinari's canvases, with three moods: `"canvas"` (raw linen, umber ink,
   sienna contours), `"guerra"` (indigo ground, pale citrine ink) and `"paz"`
   (golden cream ground, brown ink). Options for grid lines and a painted
   frame; all text meets WCAG AA contrast.
-
 * New diverging palette `terra_roxa`: the plum and mauve tones of the worker's
   shirt in *Coffee Agricultural Worker* against the pale greens of the coffee
   rows, through a sage off-white center. Its colors were sampled from the MASP
@@ -14,9 +23,12 @@
   near-black soil at the bottom of *Coffee Agricultural Worker*, through the
   plums of `terra_roxa`, to the pale citrine of *Guerra*. All eight colors are
   colorblind-safe.
-* `retirantes` no longer draws on *Mr. Queiroz Lima*. Its light center changes
-  from `#EFE9E0` to `#D9CBB2`, from *Northeastern Migrants*; the other seven
-  colors, their order and colorblind safety are unchanged.
+
+## Documentation
+
+* The "Choosing a palette style" article shows `theme_portinari()`, a
+  correlation heatmap with `terra_roxa` and an elevation map with
+  `roxa_terra`; "The paintings" covers both new palettes.
 
 # PortinariColors 0.3.0
 

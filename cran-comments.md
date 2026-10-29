@@ -1,11 +1,9 @@
-## Resubmission
+## Submission
 
-This is a resubmission. In this version I have:
-
-* Written the DOI in the Description field as <doi:10.1109/TVCG.2009.113>,
-  as requested by the incoming pre-tests.
-* Used the English name of the museum (Sao Paulo Museum of Art) in the
-  Description field.
+This is an update of PortinariColors (0.3.0 -> 0.4.0). It adds two palettes
+(`terra_roxa`, `roxa_terra`) and a `ggplot2` theme (`theme_portinari()`), and
+changes one color of the existing `retirantes` palette, as documented in
+NEWS.md.
 
 ## Test environments
 
@@ -16,13 +14,8 @@ This is a resubmission. In this version I have:
 
 ## R CMD check results
 
-0 errors | 0 warnings | 1 note
+0 errors | 0 warnings | 0 notes
 
-* This is a new release.
+## Reverse dependencies
 
-* Possibly misspelled words in DESCRIPTION: these are spelled correctly.
-  Candido Portinari is the painter; Sao Paulo and MASP name the museum that
-  holds the works; Guerra and Paz are the titles of his United Nations panels;
-  Machado, Oliveira and Fernandes are the authors of the cited method; and
-  protanopia, deuteranopia and tritanopia are the three types of
-  color-vision deficiency the package simulates.
+There are currently no reverse dependencies.

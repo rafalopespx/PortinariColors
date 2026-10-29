@@ -156,7 +156,7 @@ sampled from the MASP image of *Coffee Agricultural Worker*
 A palette is colorblind-safe for its first `n` colors when those colors
 stay at least CIE76 dE 10 apart under protanopia, deuteranopia and
 tritanopia simulation [Machado et al.,
-2009](https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=5290741).
+2009](https://rafalopespx.github.io/PortinariColors/doi.org/10.1109/TVCG.2009.113).
 The simulation is in
 [`portinari.cvd.check()`](https://rafalopespx.github.io/PortinariColors/reference/portinari.cvd.check.md).
 

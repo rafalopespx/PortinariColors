@@ -7,7 +7,7 @@
 
     <a class="navbar-brand me-2" href="../index.html">PortinariColors</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.3.0.9000</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.4.0</small>
 
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -37,12 +37,23 @@
     </div>
 
     <div class="section level2">
-<h2 class="pkg-version" data-toc-text="development version" id="portinaricolors-development-version">PortinariColors (development version)<a class="anchor" aria-label="anchor" href="#portinaricolors-development-version"></a></h2>
-<ul><li><p>New <code><a href="../reference/theme_portinari.html">theme_portinari()</a></code>, a complete <code>ggplot2</code> theme in the spirit of Portinari’s canvases, with three moods: <code>"canvas"</code> (raw linen, umber ink, sienna contours), <code>"guerra"</code> (indigo ground, pale citrine ink) and <code>"paz"</code> (golden cream ground, brown ink). Options for grid lines and a painted frame; all text meets WCAG AA contrast.</p></li>
-<li><p>New diverging palette <code>terra_roxa</code>: the plum and mauve tones of the worker’s shirt in <em>Coffee Agricultural Worker</em> against the pale greens of the coffee rows, through a sage off-white center. Its colors were sampled from the MASP image, and all nine are colorblind-safe.</p></li>
-<li><p>New sequential palette <code>roxa_terra</code>, the companion to <code>terra_roxa</code>: from the near-black soil at the bottom of <em>Coffee Agricultural Worker</em>, through the plums of <code>terra_roxa</code>, to the pale citrine of <em>Guerra</em>. All eight colors are colorblind-safe.</p></li>
-<li><p><code>retirantes</code> no longer draws on <em>Mr. Queiroz Lima</em>. Its light center changes from <code>#EFE9E0</code> to <code>#D9CBB2</code>, from <em>Northeastern Migrants</em>; the other seven colors, their order and colorblind safety are unchanged.</p></li>
+<h2 class="pkg-version" data-toc-text="0.4.0" id="portinaricolors-040">PortinariColors 0.4.0<a class="anchor" aria-label="anchor" href="#portinaricolors-040"></a></h2>
+<div class="section level3">
+<h3 id="breaking-changes-0-4-0">Breaking changes<a class="anchor" aria-label="anchor" href="#breaking-changes-0-4-0"></a></h3>
+<ul><li>
+<code>retirantes</code> changes one color. Its light center is now <code>#D9CBB2</code>, the palest tone of <em>Northeastern Migrants</em>, instead of <code>#EFE9E0</code> (previously drawn from <em>Mr. Queiroz Lima</em>, which is no longer a reference work). Plots that use the center of <code>retirantes</code> will look slightly warmer and darker. The other seven colors, their order and colorblind safety are unchanged.</li>
 </ul></div>
+<div class="section level3">
+<h3 id="new-features-0-4-0">New features<a class="anchor" aria-label="anchor" href="#new-features-0-4-0"></a></h3>
+<ul><li>New <code><a href="../reference/theme_portinari.html">theme_portinari()</a></code>, a complete <code>ggplot2</code> theme in the spirit of Portinari’s canvases, with three moods: <code>"canvas"</code> (raw linen, umber ink, sienna contours), <code>"guerra"</code> (indigo ground, pale citrine ink) and <code>"paz"</code> (golden cream ground, brown ink). Options for grid lines and a painted frame; all text meets WCAG AA contrast.</li>
+<li>New diverging palette <code>terra_roxa</code>: the plum and mauve tones of the worker’s shirt in <em>Coffee Agricultural Worker</em> against the pale greens of the coffee rows, through a sage off-white center. Its colors were sampled from the MASP image, and all nine are colorblind-safe.</li>
+<li>New sequential palette <code>roxa_terra</code>, the companion to <code>terra_roxa</code>: from the near-black soil at the bottom of <em>Coffee Agricultural Worker</em>, through the plums of <code>terra_roxa</code>, to the pale citrine of <em>Guerra</em>. All eight colors are colorblind-safe.</li>
+</ul></div>
+<div class="section level3">
+<h3 id="documentation-0-4-0">Documentation<a class="anchor" aria-label="anchor" href="#documentation-0-4-0"></a></h3>
+<ul><li>The “Choosing a palette style” article shows <code><a href="../reference/theme_portinari.html">theme_portinari()</a></code>, a correlation heatmap with <code>terra_roxa</code> and an elevation map with <code>roxa_terra</code>; “The paintings” covers both new palettes.</li>
+</ul></div>
+</div>
     <div class="section level2">
 <h2 class="pkg-version" data-toc-text="0.3.0" id="portinaricolors-030">PortinariColors 0.3.0<a class="anchor" aria-label="anchor" href="#portinaricolors-030"></a></h2><p class="text-muted">CRAN release: 2026-10-28</p>
 <ul><li><p>First CRAN release (2026-10-28).</p></li>
