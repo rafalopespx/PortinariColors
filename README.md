@@ -1,6 +1,8 @@
 # PortinariColors <img src="man/figures/logo.png" align="right" width="400" alt="PortinariColors logo" />
 
 <!-- badges: start -->
+[![CRAN status](https://www.r-pkg.org/badges/version/PortinariColors)](https://CRAN.R-project.org/package=PortinariColors)
+[![CRAN downloads](https://cranlogs.r-pkg.org/badges/grand-total/PortinariColors)](https://CRAN.R-project.org/package=PortinariColors)
 [![R-CMD-check](https://github.com/rafalopespx/PortinariColors/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/rafalopespx/PortinariColors/actions/workflows/R-CMD-check.yaml)
 <!-- badges: end -->
 
@@ -9,9 +11,20 @@ de Sao Paulo (MASP) collection and by his *Guerra* and *Paz* panels at the
 United Nations Headquarters in New York. Fast to use, easy to plot with, and built for
 [`ggplot2`](https://ggplot2.tidyverse.org/).
 
+PortinariColors is [available on CRAN](https://CRAN.R-project.org/package=PortinariColors).
+
 <!-- ![Palette overview](man/figures/palettes.png) -->
 
 ## Installation
+
+Install the released version from CRAN:
+
+```r
+install.packages("PortinariColors")
+```
+
+Or the development version from GitHub, which adds the `terra_roxa` and
+`roxa_terra` palettes and `theme_portinari()`:
 
 ```r
 # install.packages("remotes")

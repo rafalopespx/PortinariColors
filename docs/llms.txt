@@ -6,7 +6,19 @@ de Arte de Sao Paulo (MASP) collection and by his *Guerra* and *Paz*
 panels at the United Nations Headquarters in New York. Fast to use, easy
 to plot with, and built for [`ggplot2`](https://ggplot2.tidyverse.org/).
 
+PortinariColors is [available on
+CRAN](https://CRAN.R-project.org/package=PortinariColors).
+
 ## Installation
+
+Install the released version from CRAN:
+
+\
+[`install.packages`](https://rdrr.io/r/utils/install.packages.html)`(``"PortinariColors"``)`
+
+Or the development version from GitHub, which adds the `terra_roxa` and
+`roxa_terra` palettes and
+[`theme_portinari()`](https://rafalopespx.github.io/PortinariColors/reference/theme_portinari.md):
 
 \
 `# install.packages("remotes")`\

@@ -20,7 +20,7 @@
 
 # PortinariColors 0.3.0
 
-* Initial CRAN submission.
+* First CRAN release (2026-10-28).
 * Discrete scales now work with ggplot2 < 3.5.0, which requires `scale_name`.
 
 * Palettes now have a style, as in RColorBrewer and MetBrewer: qualitative
